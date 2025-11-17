@@ -11,7 +11,7 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "E:/Code/vcpkg/scripts/buildsystems/vcpkg.cmake"
+			"path" : "C:/Users/kempt/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -29,12 +29,17 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "E:/Code/vcpkg/scripts/buildsystems/vcpkg.cmake"
+			"path" : "C:/Users/kempt/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2024.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeNMakeFindMake.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -805,11 +810,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/Program Files/JetBrains/CLion 2024.3/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/MSVC-CXX-CXXImportStd.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "C:/Program Files/JetBrains/CLion 2024.3/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in"
 		},
 		{
@@ -907,8 +907,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug",
-		"source" : "C:/Users/saint/Documents/Code/Github/operator_console"
+		"build" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console/cmake-build-debug",
+		"source" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console"
 	},
 	"version" : 
 	{

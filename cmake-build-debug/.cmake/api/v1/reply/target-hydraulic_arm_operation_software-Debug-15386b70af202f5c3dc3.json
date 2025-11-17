@@ -22,7 +22,7 @@
 		],
 		"files" : 
 		[
-			"E:/Code/vcpkg/scripts/buildsystems/vcpkg.cmake",
+			"C:/Users/kempt/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -39,7 +39,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 612,
+				"line" : 608,
 				"parent" : 1
 			},
 			{
@@ -96,12 +96,12 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "C:/Users/saint/Documents/Code/Github/operator_console/backend"
+					"path" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console/backend"
 				},
 				{
 					"backtrace" : 3,
 					"isSystem" : true,
-					"path" : "C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug/vcpkg_installed/x64-windows/include"
+					"path" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console/cmake-build-debug/vcpkg_installed/x64-windows/include"
 				}
 			],
 			"language" : "CXX",

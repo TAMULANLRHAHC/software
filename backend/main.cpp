@@ -14,7 +14,6 @@ int main() {
     /// TCP Client for remote Arduino ///
     TCPClient arduino("192.168.1.116", 6000);
 
-
     /// CONTROL LOOP ///
     HAOS_ON_LOOP(instance, "DACS_LOOP", [&](ThreadedLoop& loop) {
 

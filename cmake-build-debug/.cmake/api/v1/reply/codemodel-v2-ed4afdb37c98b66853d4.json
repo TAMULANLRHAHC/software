@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "hydraulic_arm_operation_software::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-hydraulic_arm_operation_software-Debug-55b45ebad0ba28612398.json",
+					"jsonFile" : "target-hydraulic_arm_operation_software-Debug-15386b70af202f5c3dc3.json",
 					"name" : "hydraulic_arm_operation_software",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug",
-		"source" : "C:/Users/saint/Documents/Code/Github/operator_console"
+		"build" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console/cmake-build-debug",
+		"source" : "C:/Users/kempt/OneDrive/Documents/Github/Repositories/operator_console"
 	},
 	"version" : 
 	{

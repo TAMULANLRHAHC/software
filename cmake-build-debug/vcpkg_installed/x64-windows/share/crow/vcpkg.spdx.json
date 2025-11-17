@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/crow-x64-windows-1.2.0-300116b6-f758-43fc-b2b4-41378997801d",
-  "name": "crow:x64-windows@1.2.0 99c1b8f0d91d5ed442461c52687a3311f784af02fb75315a26f5c22fd9ce1167",
+  "documentNamespace": "https://spdx.org/spdxdocs/crow-x64-windows-1.2.0-762f38a9-608e-4950-84a9-fca92aae978c",
+  "name": "crow:x64-windows@1.2.0 8d37bbfe69ff8f190266213762f5ee67f0b5cc0b897bc89c9485606afb06082a",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-10-16-71538f2694db93da4668782d094768ba74c45991"
     ],
-    "created": "2025-11-17T00:19:57Z"
+    "created": "2025-10-31T23:23:32Z"
   },
   "relationships": [
     {
@@ -234,7 +234,7 @@
     {
       "name": "crow:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "99c1b8f0d91d5ed442461c52687a3311f784af02fb75315a26f5c22fd9ce1167",
+      "versionInfo": "8d37bbfe69ff8f190266213762f5ee67f0b5cc0b897bc89c9485606afb06082a",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSD-3-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -707,7 +707,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "4aba072fefd5ce5203f424e620b880038adfcb98d45689723bd9764e81f05c8b"
+          "checksumValue": "9e7bfe06cccb34782921375a6bc27b44ceb716219507028c7e4c2b734bfadaba"
         }
       ],
       "licenseConcluded": "NOASSERTION",

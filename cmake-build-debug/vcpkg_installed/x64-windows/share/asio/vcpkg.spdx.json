@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/asio-x64-windows-1.32.0-8919285e-65a1-468a-9eed-64cd163e9867",
-  "name": "asio:x64-windows@1.32.0 f2b5dbeaa4ed6d2d3cda0eb5ffe1e89606fb8763532ccbbc9b9e5f9d4a5badb8",
+  "documentNamespace": "https://spdx.org/spdxdocs/asio-x64-windows-1.32.0-779d3f21-9ae1-4e54-845e-9f9d6c0446c8",
+  "name": "asio:x64-windows@1.32.0 6a544117053bdc49ae4eec7c874095fbaa3198f8bb734c2f9220ae6a8ca4be52",
   "creationInfo": {
     "creators": [
       "Tool: vcpkg-2025-10-16-71538f2694db93da4668782d094768ba74c45991"
     ],
-    "created": "2025-11-17T00:19:46Z"
+    "created": "2025-10-30T22:03:12Z"
   },
   "relationships": [
     {
@@ -3223,7 +3223,7 @@
       "name": "asio",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.32.0",
-      "downloadLocation": "git+https://github.com/Microsoft/vcpkg@d1b402afe0e4c5b8efb08dcc8be6b0c90900a55e",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/asio",
       "homepage": "https://think-async.com/Asio/",
       "licenseConcluded": "BSL-1.0",
       "licenseDeclared": "NOASSERTION",
@@ -3234,7 +3234,7 @@
     {
       "name": "asio:x64-windows",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "f2b5dbeaa4ed6d2d3cda0eb5ffe1e89606fb8763532ccbbc9b9e5f9d4a5badb8",
+      "versionInfo": "6a544117053bdc49ae4eec7c874095fbaa3198f8bb734c2f9220ae6a8ca4be52",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSL-1.0",
       "licenseDeclared": "NOASSERTION",
@@ -10895,7 +10895,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "1e90818fee74fb22f2b3284094cb8ab0dd243d89818cbc89b8e92bb6e2d8797b"
+          "checksumValue": "ffac67420999cb64404c74b0e5cc87a82cf7421b6d3aa0caae04897b80410f97"
         }
       ],
       "licenseConcluded": "NOASSERTION",
