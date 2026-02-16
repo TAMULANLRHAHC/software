@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <Ethernet.h>
 #include <ArduinoJson.h>
-
 #include "main.h"
 
 // MAC address — must be unique on your network
@@ -81,19 +80,35 @@ void loop() {
 
 
 void run_control_iteration() {
-    int led_state = incoming_data["led_state"];
 
-    if (led_state == 1) {
-        digitalWrite(2, HIGH);
-        outgoing_data["led_state"] = 1;
-    } else {
-        digitalWrite(2, LOW);
-        outgoing_data["led_state"] = 0;
+    //----------- COMMAND RELAYS -----------//
+    int relay_num_start = 1;
+    int relay_num_end = 8;
+    int relay_pins[] = {49, 47, 45, 43, 41, 39, 37, 35};
+
+    for (int i = relay_num_start; i <= relay_num_end; i++) {
+        //get desired state
+        String incoming_data_string = "relay_" + i + String("desired_state");
+        int relay_desired_state = incoming_data[incoming_data_string];
+
+        //get pin to write
+        int pin = relay_pins[i-relay_num_start];
+
+        //write pin
+        String outgoing_data_string = "relay_" + i + String("actual_state");
+        if (relay_desired_state == 1) {
+            digitalWrite(pin, HIGH);
+            outgoing_data[outgoing_data_string] = 1;
+        } else {
+            digitalWrite(pin, LOW);
+            outgoing_data[outgoing_data_string] = 0;
+        }
     }
 
-    int raw = analogRead(A0);
-    float voltage = raw * (5.0 / 1023.0);
-    outgoing_data["A0_voltage"] = voltage;
+
+    // int raw = analogRead(A0);
+    // float voltage = raw * (5.0 / 1023.0);
+    // outgoing_data["A0_voltage"] = voltage;
 }
 
 
