@@ -17,7 +17,7 @@ int main() {
     int relay_end = 8;
 
     /// CONTROL LOOP ///
-    HAOS_ON_START(instance, "hand_init", [&](ThreadedLoop& loop) {
+    HAOS_ON_START(instance, "hand_loop", [&](ThreadedLoop& loop) {
         upsertTag("HAOS:hand/connected.value", 0.0);
 
         for (int i = relay_start; i <= relay_end; i++) {

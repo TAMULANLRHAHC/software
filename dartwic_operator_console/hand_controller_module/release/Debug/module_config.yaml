@@ -1,0 +1,32 @@
+name: "hand_controller_module" #must match dll name and folder name
+title: "Hand Controller Module"
+description: "A DARTWIC module to interface with the TAMU LANL Robotic Hand controller."
+author: "Kempton Burton"
+version: "1.0"
+icon_image_src: "https://cdn.freebiesupply.com/images/large/2x/texas-am-university-logo-black-and-white.png"
+
+ui:
+  categories:
+    - category: "Setup"
+      parameters:
+
+        device_name:
+          default: "hand_controller"
+          input:
+            type: "discrete_input"
+            label: "Device Name"
+            placeholder: "Enter device name..."
+
+        server_ip:
+          default: "127.0.0.1"
+          input:
+            type: "discrete_input"
+            label: "Server Ip"
+            placeholder: ""
+
+        server_port:
+          default: 6000
+          input:
+            type: "numerical_input"
+            label: "Server Port"
+            placeholder: ""

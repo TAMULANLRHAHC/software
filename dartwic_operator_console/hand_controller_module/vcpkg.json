@@ -1,6 +1,6 @@
 {
-  "dependencies" : [ {
-    "name" : "yaml-cpp",
-    "version>=" : "0.8.0#3"
+  "dependencies" : [ "yaml-cpp", "nlohmann-json", {
+    "name" : "poco",
+    "features": [ "net" ]
   } ]
 }

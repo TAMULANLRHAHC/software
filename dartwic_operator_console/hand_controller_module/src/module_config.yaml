@@ -1,25 +1,32 @@
-name: "module_example" #must match dll name and folder name
-title: "Example Module"
-description: "Creates an example module."
-author: "Developer"
+name: "hand_controller_module" #must match dll name and folder name
+title: "Hand Controller Module"
+description: "A DARTWIC module to interface with the TAMU LANL Robotic Hand controller."
+author: "Kempton Burton"
 version: "1.0"
-icon_image_src: "https://avatars.githubusercontent.com/u/126730140?v=4&size=64"
+icon_image_src: "https://cdn.freebiesupply.com/images/large/2x/texas-am-university-logo-black-and-white.png"
 
 ui:
   categories:
-    - category: "Examples"
+    - category: "Setup"
       parameters:
 
-        example_parameter_1:
-          default: 0
-          input:
-            type: "numerical_input" #types are "numerical_input" or "discrete_input"
-            label: "Example 1"
-            placeholder: "Enter example 1 value..."
-
-        example_parameter_2:
-          default: "0"
+        device_name:
+          default: "hand_controller"
           input:
             type: "discrete_input"
-            label: "Example 2"
-            placeholder: "Enter example 2 value..."
+            label: "Device Name"
+            placeholder: "Enter device name..."
+
+        server_ip:
+          default: "127.0.0.1"
+          input:
+            type: "discrete_input"
+            label: "Server Ip"
+            placeholder: ""
+
+        server_port:
+          default: 6000
+          input:
+            type: "numerical_input"
+            label: "Server Port"
+            placeholder: ""
