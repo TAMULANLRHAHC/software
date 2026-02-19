@@ -1,0 +1,6 @@
+name: hand_controller
+registry: hand_controller_module
+parameters:
+  device_name: hand_controller
+  server_ip: 192.168.1.116
+  server_port: 6000
