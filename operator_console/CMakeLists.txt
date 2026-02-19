@@ -28,6 +28,8 @@ target_include_directories(hydraulic_arm_operation_software PRIVATE
 find_package(Crow CONFIG REQUIRED)
 #NLOHMANN
 find_package(nlohmann_json CONFIG REQUIRED)
+#poco
+find_package(Poco REQUIRED COMPONENTS Foundation Net)
 
 #LINK LIBRARIES
 target_link_libraries(hydraulic_arm_operation_software PRIVATE
@@ -36,4 +38,6 @@ target_link_libraries(hydraulic_arm_operation_software PRIVATE
         ws2_32
         wsock32
         nlohmann_json::nlohmann_json
+        Poco::Foundation
+        Poco::Net
 )

@@ -1,39 +1,36 @@
 #pragma once
 #include <string>
-#include <asio.hpp>
+#include <queue>
 #include <nlohmann/json.hpp>
-#include <thread>
-#include <atomic>
-#include <mutex>
-#include <iostream>
+#include <Poco/Net/StreamSocket.h>
+#include <Poco/Net/SocketAddress.h>
 
 class TCPClient {
 public:
-    TCPClient(const std::string& ip, int port);
-    ~TCPClient();
-
-    TCPClient(const TCPClient&) = delete;
-    TCPClient& operator=(const TCPClient&) = delete;
+    TCPClient(const std::string& host, int port);
 
     bool isConnected() const;
 
+    bool hasHeartbeat() const;
+
+    // Non-blocking send
     bool sendJSON(const nlohmann::json& j);
+
+    // Non-blocking receive; returns true if a JSON object was received
     bool readJSON(nlohmann::json& out);
 
-    void startBackgroundConnect(int retry_ms = 1000);
-    void stopBackgroundConnect();
+    // Attempt reconnect if disconnected
+    void tryReconnect();
 
 private:
-    void disconnect();
+    std::string host_;
+    int port_;
+    bool connected_ = false;
 
-    std::string ip_;
-    std::string port_;
+    std::chrono::steady_clock::time_point lastHeartbeat_;
+    double heartbeatTimeoutSeconds_ = 2.0; // max seconds allowed without heartbeat
+    bool heartbeat_recieved_ = false;
 
-    asio::io_context io_;
-    asio::ip::tcp::socket socket_;
-    mutable std::mutex socket_mutex_;
-    bool connected_;
 
-    std::thread connect_thread_;
-    std::atomic<bool> run_thread_;
+    Poco::Net::StreamSocket socket_;
 };

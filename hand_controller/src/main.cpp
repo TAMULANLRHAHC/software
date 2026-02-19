@@ -6,6 +6,10 @@ EthernetServer server(SERVER_PORT);
 // Persistent client object
 EthernetClient currentClient;
 
+/* ---------- BAKED-IN TELEMETRY ---------- /
+ * "heatbeat"
+ */
+
 
 void setup() {
     Serial.begin(115200);
@@ -72,6 +76,7 @@ void loop() {
         }
 
         /// SEND OUTGOING DATA ///
+        outgoing_data["heartbeat"] = millis(); //bake in heartbeat
         String buffer;
         serializeJson(outgoing_data, buffer);
         buffer += "\n";

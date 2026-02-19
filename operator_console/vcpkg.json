@@ -2,7 +2,11 @@
   "name" : "haos",
   "version-string" : "1.0.0",
   "builtin-baseline" : "83375d1ded4878305df9f5272f360f4f80ee0d83",
-  "dependencies" : [ "crow", "nlohmann-json" ],
+  "dependencies" : [ "crow", "nlohmann-json", {
+    "name" : "poco",
+    "features": [ "net" ],
+    "version>=" : "1.14.1#2"
+  } ],
   "overrides" : [ {
     "name" : "crow",
     "version" : "1.2.0"

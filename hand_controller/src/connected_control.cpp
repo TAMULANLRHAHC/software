@@ -5,15 +5,18 @@
 #include "main.h"
 
 /* ---------- CONFIGURATIONS ---------- /
-"watchdog_timeout_seconds"
-"relay_#_watchdog_state"
+ * "watchdog_timeout_seconds"
+ * "relay_#_watchdog_state"
+ */
 
 /* ---------- COMMANDS ---------- /
-"relay_#_desired_state"
+ * "relay_#_desired_state"
+ */
 
 /* ---------- TELEMETRY ---------- /
-"relay_#_actual_state"
-"AIN#_raw"
+ * "relay_#_actual_state"
+ * "AIN#_raw"
+ */
 
 /* ---------- VALID CONNECTION ---------- /
  * When the telemetry connection is VALID, this runs.

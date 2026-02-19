@@ -1,137 +1,110 @@
 #include "tcp.h"
-#include <chrono>
+#include <iostream>
+#include <Poco/Exception.h>
+#include <Poco/Timespan.h>
 
-TCPClient::TCPClient(const std::string& ip, int port)
-    : ip_(ip), port_(std::to_string(port)),
-      socket_(io_), connected_(false), run_thread_(false) {
-    startBackgroundConnect();
-}
-
-TCPClient::~TCPClient() {
-    stopBackgroundConnect();
-    disconnect();
-}
+TCPClient::TCPClient(const std::string& host, int port)
+    : host_(host), port_(port), connected_(false) {}
 
 bool TCPClient::isConnected() const {
     return connected_;
 }
 
-void TCPClient::disconnect() {
-    std::lock_guard<std::mutex> lock(socket_mutex_);
-    if (socket_.is_open()) {
-        asio::error_code ec;
-        socket_.shutdown(asio::ip::tcp::socket::shutdown_both, ec);
-        socket_.close(ec);
-    }
-    connected_ = false;
+bool TCPClient::hasHeartbeat() const {
+    return heartbeat_recieved_;
 }
 
 bool TCPClient::sendJSON(const nlohmann::json& j) {
-    asio::ip::tcp::socket* socket_ptr = nullptr;
-
-    {
-        std::lock_guard<std::mutex> lock(socket_mutex_);
-        if (!connected_ || !socket_.is_open()) return false;
-        socket_ptr = &socket_;
-    }
+    if (!connected_) return false;
 
     try {
         std::string data = j.dump() + "\n";
-        asio::error_code ec;
-        asio::write(*socket_ptr, asio::buffer(data), ec);
-        if (ec) {
-            std::cerr << "[TCP] Send failed: " << ec.message() << "\n";
-            disconnect(); // reconnect thread will handle reconnect
-            return false;
-        }
+        socket_.sendBytes(data.data(), static_cast<int>(data.size()));
         return true;
-    } catch (const std::exception& e) {
-        std::cerr << "[TCP] Send exception: " << e.what() << "\n";
-        disconnect();
+    } catch (const Poco::Exception& e) {
+        std::cerr << "[TCP] Send failed: " << e.displayText() << "\n";
+        connected_ = false;
         return false;
     }
 }
 
-bool TCPClient::readJSON(nlohmann::json& out) {
-    asio::ip::tcp::socket* socket_ptr = nullptr;
-
-    // Lock only to check connection and get a pointer
-    {
-        std::lock_guard<std::mutex> lock(socket_mutex_);
-        if (!connected_ || !socket_.is_open()) return false;
-        socket_ptr = &socket_;
-    }
+bool TCPClient::readJSON(nlohmann::json& j) {
+    if (!connected_) return false;
 
     try {
-        // Flush leftover bytes (non-blocking)
-        asio::error_code ec;
-        while (socket_ptr->available(ec) > 0) {
-            char discard[1024];
-            socket_ptr->read_some(asio::buffer(discard, 1024), ec);
-            if (ec) break;
+        static std::string buffer;
+
+        // Non-blocking check (10 ms)
+        if (socket_.poll(Poco::Timespan(0, 10000), Poco::Net::Socket::SELECT_READ)) {
+            char temp[512];
+            int n = socket_.receiveBytes(temp, sizeof(temp));
+            if (n <= 0) {
+                connected_ = false;
+                std::cerr << "[TCP] Server closed connection!\n";
+                return false;
+            }
+
+            buffer.append(temp, n);
+
+            size_t pos;
+            while ((pos = buffer.find('\n')) != std::string::npos) {
+                std::string line = buffer.substr(0, pos);
+                buffer.erase(0, pos + 1);
+
+                if (!line.empty()) {
+                    j = nlohmann::json::parse(line);
+
+                    // Check heartbeat
+                    if (j.contains("heartbeat")) {
+                        lastHeartbeat_ = std::chrono::steady_clock::now();
+                        heartbeat_recieved_ = true;
+                    }
+
+                    return true;
+                }
+            }
         }
 
-        // Blocking read (no mutex held)
-        asio::streambuf buffer;
-        asio::read_until(*socket_ptr, buffer, "\n", ec);
-        if (ec) {
-            std::cerr << "[TCP] Read failed: " << ec.message() << "\n";
-            disconnect();  // reconnect will take care of it
-            return false;
+        // Check heartbeat timeout ONLY after we have recieved a valid heartbeat
+        auto now = std::chrono::steady_clock::now();
+        double elapsed = std::chrono::duration<double>(now - lastHeartbeat_).count();
+        if ((elapsed > heartbeatTimeoutSeconds_) && heartbeat_recieved_) {
+            connected_ = false;
+            heartbeat_recieved_ = false;
+            std::cerr << "[TCP] Heartbeat timeout! No heartbeat in "
+                      << elapsed << " seconds.\n";
         }
 
-        std::istream is(&buffer);
-        std::string line;
-        std::getline(is, line);
-        if (line.empty()) return false;
-
-        out = nlohmann::json::parse(line);
-        return true;
-    } catch (const std::exception& e) {
-        std::cerr << "[TCP] Read failed: " << e.what() << "\n";
-        disconnect();
+        return false; // no complete JSON yet
+    } catch (const Poco::Exception& e) {
+        std::cerr << "[TCP] Read failed: " << e.displayText() << "\n";
+        connected_ = false;
         return false;
     }
 }
 
+void TCPClient::tryReconnect() {
+    if (connected_) return;
 
+    try {
+        Poco::Net::SocketAddress addr(host_, port_);
+        socket_ = Poco::Net::StreamSocket();
 
-void TCPClient::startBackgroundConnect(int retry_ms) {
-    if (run_thread_) return;
-    run_thread_ = true;
+        // Connect timeout (5 second)
+        Poco::Timespan timeout(5, 0);
 
-    connect_thread_ = std::thread([this, retry_ms]() {
-        while (run_thread_) {
-            if (!connected_) {
-                try {
-                    asio::ip::tcp::resolver resolver(io_);
-                    auto endpoints = resolver.resolve(ip_, port_);
-                    asio::ip::tcp::socket temp_socket(io_);
-                    asio::connect(temp_socket, endpoints);
+        // connect
+        socket_.connect(addr, timeout);
 
-                    std::lock_guard<std::mutex> lock(socket_mutex_);
-                    socket_ = std::move(temp_socket);
+        // Recieve timeout (0.1 seconds)
+        socket_.setReceiveTimeout(Poco::Timespan(0, 100000));
 
-                    // flush leftover bytes
-                    asio::error_code ec;
-                    while (socket_.available(ec) > 0) {
-                        char discard[1024];
-                        socket_.read_some(asio::buffer(discard, 1024), ec);
-                        if (ec) break;
-                    }
+        connected_ = true;
+        lastHeartbeat_ = std::chrono::steady_clock::now(); // RESET on reconnect
 
-                    connected_ = true;
-                    std::cout << "[TCP] Connected to " << ip_ << ":" << port_ << "\n";
-                } catch (const std::exception& e) {
-                    std::cerr << "[TCP] Connect failed: " << e.what() << "\n";
-                }
-            }
-            std::this_thread::sleep_for(std::chrono::milliseconds(retry_ms));
-        }
-    });
-}
-
-void TCPClient::stopBackgroundConnect() {
-    run_thread_ = false;
-    if (connect_thread_.joinable()) connect_thread_.join();
+        std::cout << "[TCP] Connected to " << host_ << ":" << port_ << "\n";
+    } catch (const Poco::Exception& e) {
+        connected_ = false;
+        std::cerr << "[TCP] Connect failed: " << e.displayText() << "\n";
+    }
 }
