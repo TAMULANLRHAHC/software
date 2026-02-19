@@ -1,0 +1,7 @@
+# Editor directories and files
+.idea/
+.vscode/
+
+# CMake Files
+cmake-build-debug/
+cmake-build-release/

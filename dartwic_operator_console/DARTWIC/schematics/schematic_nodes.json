@@ -1,0 +1,298 @@
+{
+    "Parameter Display": {
+        "Parameter": {
+            "data": {
+                "ifElseBlock": {
+                    "elseConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "0.0"
+                    },
+                    "ifChecks": [],
+                    "ifConfigurableInput": {}
+                },
+                "labelConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": "parameter"
+                },
+                "show_label": true,
+                "symbol": "P",
+                "unitsConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": "units"
+                }
+            },
+            "height": 10,
+            "type": "parameter_display",
+            "width": 10
+        },
+        "Control": {
+            "data": {
+                "general_settings": {
+                    "allow_button_click_tag": "",
+                    "bottom_label": ""
+                },
+                "discrete_input": {
+                    "input_type": "discrete",
+                    "selected_tag": ""
+                },
+                "function_call": {
+                    "inputList": [],
+                    "selected_function": ""
+                },
+                "selected_tab": "function_call",
+                "tag_update": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "type": "discrete_input",
+                            "value": ""
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "selected_tag": ""
+                },
+                "ifElseBlock": {
+                    "elseConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "0.0"
+                    },
+                    "ifChecks": [],
+                    "ifConfigurableInput": {}
+                },
+                "labelConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": "control"
+                },
+                "show_label": true,
+                "symbol": "C",
+                "unitsConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": ""
+                }
+            },
+            "height": 10,
+            "type": "control_display",
+            "width": 10
+        },
+        "Label": {
+            "data": {
+                "ifElseBlock": {
+                    "elseConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "value"
+                    },
+                    "ifChecks": [],
+                    "ifConfigurableInput": {}
+                },
+                "labelConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": "label"
+                },
+                "unitsConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": "units"
+                }
+            },
+            "height": 10,
+            "type": "label",
+            "width": 10
+        },
+        "Channel Graph": {
+            "data": {
+                "series": [
+                    {
+                        "channel_path": "",
+                        "label": "",
+                        "color": "#FFFFFF"
+                    }
+                ],
+                "settings": {
+                    "windowSeconds": 30,
+                    "cullScale": 3,
+                    "enableHistoricalRequests": false
+                }
+            },
+            "height": 400,
+            "type": "channel_graph",
+            "width": 700
+        }
+    },
+    "Command": {
+        "Button": {
+            "data": {
+                "discrete_input": {
+                    "input_type": "discrete",
+                    "selected_tag": ""
+                },
+                "function_call": {
+                    "inputList": [],
+                    "selected_function": ""
+                },
+                "general_settings": {
+                    "allow_button_click_tag": ""
+                },
+                "selected_tab": "function_call",
+                "tag_update": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "type": "discrete_input",
+                            "value": ""
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "selected_tag": ""
+                }
+            },
+            "height": 30,
+            "type": "button",
+            "width": 30
+        }
+    },
+    "Fluids": {
+        "Tank": {
+            "data": {
+                "fillColorConfigurableInput": {
+                    "type": "hex_color",
+                    "value": "#4FC6D3"
+                },
+                "fillPercentageConfigurableInput": {
+                    "type": "discrete_input",
+                    "value": 0
+                }
+            },
+            "height": 150,
+            "type": "tank",
+            "width": 100
+        },
+        "Valve": {
+            "data": {
+                "discrete_input": {
+                    "input_type": "discrete",
+                    "selected_tag": ""
+                },
+                "function_call": {
+                    "inputList": [],
+                    "selected_function": ""
+                },
+                "general_settings": {
+                    "allow_button_click_tag": ""
+                },
+                "openStateIfElseBlock": {
+                    "elseConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    },
+                    "ifChecks": [],
+                    "ifConfigurableInput": {}
+                },
+                "orientation": "horizontal",
+                "selected_tab": "function_call",
+                "tag_update": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "type": "discrete_input",
+                            "value": ""
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "selected_tag": ""
+                }
+            },
+            "height": 10,
+            "type": "valve",
+            "width": 10
+        },
+        "Vent": {
+            "data": {
+                "fill_color": "none",
+                "handlePosition": {
+                    "x": -4,
+                    "y": 50
+                },
+                "handles": [
+                    {
+                        "handlePosition": {
+                            "x": -10,
+                            "y": 50
+                        },
+                        "handleType": "customizablePositionHandle",
+                        "position": "left",
+                        "type": "both"
+                    }
+                ],
+                "stroke_color": "#555555",
+                "stroke_width": 2,
+                "svg_color_editable": true,
+                "svg_string": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-wind-icon lucide-wind\"><path d=\"M12.8 19.6A2 2 0 1 0 14 16H2\"/><path d=\"M17.5 8a2.5 2.5 0 1 1 2 4H2\"/><path d=\"M9.8 4.4A2 2 0 1 1 11 8H2\"/></svg>",
+                "vb_h": 18,
+                "vb_min_x": 2,
+                "vb_min_y": 3,
+                "vb_w": 21,
+                "viewbox_border": {
+                    "color": "orange",
+                    "width": 0
+                }
+            },
+            "height": 25,
+            "type": "svg",
+            "width": 25
+        }
+    },
+    "Other": {
+        "Box": {
+            "data": {
+                "class_name": ""
+            },
+            "height": 100,
+            "type": "box",
+            "width": 100
+        },
+        "Camera": {
+            "data": {
+                "image_src": ""
+            },
+            "height": 100,
+            "type": "camera",
+            "width": 100
+        },
+        "MxGraph Diagram": {
+            "data": {
+                "update_rules": [
+                    {
+                        "id": "",
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": ""
+                            },
+                            "ifChecks": [],
+                            "ifConfigurableInput": {}
+                        },
+                        "property": "",
+                        "property_type": "style"
+                    }
+                ],
+                "xml_compressed": ""
+            },
+            "height": 100,
+            "type": "mxgraph_diagram",
+            "width": 100
+        },
+        "SVG Diagram": {
+            "data": {
+                "svg_data": {
+                    "svg_string": "",
+                    "vb_h": 100,
+                    "vb_min_x": 100,
+                    "vb_min_y": 100,
+                    "vb_w": 100
+                }
+            },
+            "height": 100,
+            "type": "svg_diagram",
+            "width": 100
+        }
+    }
+}

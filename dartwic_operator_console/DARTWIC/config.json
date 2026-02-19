@@ -1,0 +1,8 @@
+{
+    "node_name": "MY_NODE",
+    "python_home_directory": "../python_interpreter",
+    "resources_directory": "../",
+    "server_admin_password": "admin",
+    "server_ip": "127.0.0.1",
+    "server_port": 5000
+}

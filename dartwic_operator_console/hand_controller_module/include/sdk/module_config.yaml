@@ -1,0 +1,25 @@
+name: "module_example" #must match dll name and folder name
+title: "Example Module"
+description: "Creates an example module."
+author: "Developer"
+version: "1.0"
+icon_image_src: "https://avatars.githubusercontent.com/u/126730140?v=4&size=64"
+
+ui:
+  categories:
+    - category: "Examples"
+      parameters:
+
+        example_parameter_1:
+          default: 0
+          input:
+            type: "numerical_input" #types are "numerical_input" or "discrete_input"
+            label: "Example 1"
+            placeholder: "Enter example 1 value..."
+
+        example_parameter_2:
+          default: "0"
+          input:
+            type: "discrete_input"
+            label: "Example 2"
+            placeholder: "Enter example 2 value..."

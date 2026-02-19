@@ -1,0 +1,73 @@
+name: "modbus_tcp_client" #must match dll name and folder name
+title: "Modbus TCP Client"
+description: "Creates a modbus TCP client to connect DARTWIC to modbus devices."
+author: "Voit Systems"
+version: "v0.3.0"
+icon_image_src: "https://upload.wikimedia.org/wikipedia/commons/d/da/Logo_of_Modbus.svg"
+
+ui:
+  categories:
+    - category: "Device Setup"
+      parameters:
+        device_name:
+          default: "Device 1"
+          input:
+            type: "discrete_input"
+            label: "Device Name"
+            placeholder: "Enter device name..."
+
+        server_ip:
+          default: "127.0.0.1"
+          input:
+            type: "discrete_input"
+            label: "Server Ip"
+            placeholder: ""
+
+        server_port:
+          default: 502
+          input:
+            type: "numerical_input"
+            label: "Server Port"
+            placeholder: ""
+
+        num_coils:
+          default: 0
+          input:
+            type: "numerical_input"
+            label: "Number Coils"
+            placeholder: ""
+
+        num_discrete_inputs:
+          default: 0
+          input:
+            type: "numerical_input"
+            label: "Number Discrete Inputs"
+            placeholder: ""
+
+        num_holding_registers:
+          default: 0
+          input:
+            type: "numerical_input"
+            label: "Number Holding Registers"
+            placeholder: ""
+
+        num_input_registers:
+          default: 0
+          input:
+            type: "numerical_input"
+            label: "Number Input Registers"
+            placeholder: ""
+
+        tv_sec:
+          default: 3
+          input:
+            type: "numerical_input"
+            label: "Tv Sec"
+            placeholder: ""
+
+        tv_usec:
+          default: 3
+          input:
+            type: "numerical_input"
+            label: "Tv Micro Sec"
+            placeholder: ""

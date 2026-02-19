@@ -1,0 +1,6 @@
+{
+  "dependencies" : [ {
+    "name" : "yaml-cpp",
+    "version>=" : "0.8.0#3"
+  } ]
+}

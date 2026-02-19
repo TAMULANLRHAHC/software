@@ -1,0 +1,1110 @@
+{
+    "schematic_name": "default",
+    "schematic_file_name": "default",
+    "flow_instance": {
+        "nodes": [
+            {
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "dropdown_label": "Linear Interpolate",
+                        "type": "linear_interpolate",
+                        "value": {
+                            "input_value_configurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "my_Test_tag.value"
+                            },
+                            "lower_input_configurableInput": {
+                                "type": "discrete_input",
+                                "value": 0
+                            },
+                            "lower_value_configurableInput": {
+                                "dropdown_label": "Hex Color",
+                                "type": "hex_color",
+                                "value": "#53747f"
+                            },
+                            "upper_input_configurableInput": {
+                                "type": "discrete_input",
+                                "value": 100
+                            },
+                            "upper_value_configurableInput": {
+                                "dropdown_label": "Hex Color",
+                                "type": "hex_color",
+                                "value": "#bce6f0"
+                            }
+                        }
+                    },
+                    "fillPercentageConfigurableInput": {
+                        "dropdown_label": "Tag Value",
+                        "type": "tag_value",
+                        "value": "tank_sim/supply_tank_fill.value"
+                    },
+                    "general_settings": {
+                        "bottom_label": "supply tank"
+                    }
+                },
+                "dragging": false,
+                "height": 203,
+                "id": "vt9vePfojtRKix_amFQtF",
+                "measured": {
+                    "height": 203,
+                    "width": 127
+                },
+                "position": {
+                    "x": -420,
+                    "y": 255
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "tank",
+                "width": 127
+            },
+            {
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "dropdown_label": "Hex Color",
+                        "type": "hex_color",
+                        "value": "#607c85"
+                    },
+                    "fillPercentageConfigurableInput": {
+                        "dropdown_label": "Tag Value",
+                        "type": "tag_value",
+                        "value": "tank_sim/run_tank_fill.value"
+                    },
+                    "general_settings": {
+                        "bottom_label": "run tank",
+                        "class_name": "",
+                        "top_label": ""
+                    }
+                },
+                "dragging": false,
+                "height": 189,
+                "id": "Rim0axwhbLzGT24irG3eJ",
+                "measured": {
+                    "height": 189,
+                    "width": 59
+                },
+                "position": {
+                    "x": -60,
+                    "y": 435
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "tank",
+                "width": 59
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/supply_tank_fill.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "supply tank FILL"
+                    },
+                    "show_label": true,
+                    "symbol": "F",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "%"
+                    }
+                },
+                "dragging": false,
+                "height": 28,
+                "id": "t1VPZMT7C4zmuoZBXLBwn",
+                "measured": {
+                    "height": 28,
+                    "width": 211
+                },
+                "position": {
+                    "x": -435,
+                    "y": 150
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "parameter_display",
+                "width": 211
+            },
+            {
+                "data": {
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": "",
+                        "general_alarming_tags": [],
+                        "top_label": "SUPPLY FILL"
+                    },
+                    "openStateIfElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/supply_fill_valve.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "orientation": "vertical",
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": "0"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "ifConfigurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "tank_sim/supply_fill_valve.value"
+                            }
+                        },
+                        "selected_tag": "tank_sim/supply_fill_valve.value"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "dB2CROAL5y3W5p1Enm89Y",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": -381.4156455296862,
+                    "y": 558.3384121014409
+                },
+                "selected": false,
+                "type": "valve",
+                "width": 10
+            },
+            {
+                "data": {
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": "run vent"
+                    },
+                    "openStateIfElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/run_tank_vent_valve.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "orientation": "horizontal",
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": "0"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "ifConfigurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "tank_sim/run_tank_vent_valve.value"
+                            }
+                        },
+                        "selected_tag": "tank_sim/run_tank_vent_valve.value"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "cgaeaZWFtNKAWB8JWI4an",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 60,
+                    "y": 660
+                },
+                "selected": false,
+                "type": "valve",
+                "width": 10
+            },
+            {
+                "data": {
+                    "fill_color": "none",
+                    "handlePosition": {
+                        "x": -4,
+                        "y": 50
+                    },
+                    "handles": [
+                        {
+                            "handlePosition": {
+                                "x": -10,
+                                "y": 50
+                            },
+                            "handleType": "customizablePositionHandle",
+                            "position": "left",
+                            "type": "both"
+                        }
+                    ],
+                    "stroke_color": "#555555",
+                    "stroke_width": 2,
+                    "svg_color_editable": true,
+                    "svg_string": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-wind-icon lucide-wind\"><path d=\"M12.8 19.6A2 2 0 1 0 14 16H2\"/><path d=\"M17.5 8a2.5 2.5 0 1 1 2 4H2\"/><path d=\"M9.8 4.4A2 2 0 1 1 11 8H2\"/></svg>",
+                    "vb_h": 18,
+                    "vb_min_x": 2,
+                    "vb_min_y": 3,
+                    "vb_w": 21,
+                    "viewbox_border": {
+                        "color": "orange",
+                        "width": 0
+                    }
+                },
+                "dragging": false,
+                "height": 25,
+                "id": "ldwf_ATBdUP8LwuFwFhyy",
+                "measured": {
+                    "height": 25,
+                    "width": 25
+                },
+                "position": {
+                    "x": 105,
+                    "y": 675
+                },
+                "selected": false,
+                "type": "svg",
+                "width": 25
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/run_tank_fill.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "run tank fill"
+                    },
+                    "show_label": true,
+                    "symbol": "f",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "%"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "JvsBJiDJRQT3wQYlr1_dR",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": -90,
+                    "y": 330
+                },
+                "selected": false,
+                "type": "parameter_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/supply_tank_pressure.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "supply tank pressure"
+                    },
+                    "show_label": true,
+                    "symbol": "P",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "PSI"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "1fwpJnbqd8STHKrxOThV9",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": -435,
+                    "y": 195
+                },
+                "selected": false,
+                "type": "parameter_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/run_tank_pressure.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "run tank pressure"
+                    },
+                    "show_label": true,
+                    "symbol": "P",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "PSI"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "bLkXrTOG5PWkxStI5umeO",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": -90,
+                    "y": 375
+                },
+                "selected": false,
+                "type": "parameter_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "class_name": "",
+                    "general_settings": {
+                        "background_node": true,
+                        "class_name": "",
+                        "top_label": "autofill"
+                    }
+                },
+                "draggable": false,
+                "dragging": false,
+                "height": 185,
+                "id": "IE8ZICj--QTfMpdA3xN-z",
+                "measured": {
+                    "height": 185,
+                    "width": 348
+                },
+                "position": {
+                    "x": 325,
+                    "y": -4
+                },
+                "resizing": false,
+                "selectable": false,
+                "selected": false,
+                "type": "box",
+                "width": 348,
+                "zIndex": -1000
+            },
+            {
+                "data": {
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "general_settings": {
+                        "allow_button_click_tag": ""
+                    },
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Discrete Input",
+                            "type": "discrete_input",
+                            "value": "⚫"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "ifConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "servervariables/loops.autofill.running.value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "autofill"
+                    },
+                    "selected_tab": "tag_update",
+                    "show_label": true,
+                    "symbol": "AF",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": "0"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "ifConfigurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "servervariables/loops.autofill.running.value"
+                            }
+                        },
+                        "selected_tag": "servervariables/loops.autofill.running.value"
+                    },
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "z-hswOZEVCQFeb0IONNCb",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 345,
+                    "y": 15
+                },
+                "selected": false,
+                "type": "control_display",
+                "width": 10,
+                "zIndex": -1000
+            },
+            {
+                "data": {
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Discrete Input",
+                            "type": "discrete_input",
+                            "value": "⚫"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "ifConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/autofill_abort.value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "Abort"
+                    },
+                    "selected_tab": "tag_update",
+                    "show_label": true,
+                    "symbol": "A",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "dropdown_label": "Discrete Input",
+                                "type": "discrete_input",
+                                "value": "0"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "ifConfigurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "tank_sim/autofill_abort.value"
+                            }
+                        },
+                        "selected_tag": "tank_sim/autofill_abort.value"
+                    },
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "OgZATSOZMON75nxp4eOAe",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 555,
+                    "y": 15
+                },
+                "selected": false,
+                "type": "control_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "type": "discrete_input",
+                            "value": "⚫"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟡"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "ifConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/autofill_hold.value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "hold"
+                    },
+                    "selected_tab": "tag_update",
+                    "show_label": true,
+                    "symbol": "h",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": "0"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "ifConfigurableInput": {
+                                "dropdown_label": "Tag Value",
+                                "type": "tag_value",
+                                "value": "tank_sim/autofill_hold.value"
+                            }
+                        },
+                        "selected_tag": "tank_sim/autofill_hold.value"
+                    },
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "vA_uEeJ8Tp-B2miQ5I6VJ",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 555,
+                    "y": 60
+                },
+                "selected": false,
+                "type": "control_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/run_tank_fill_target.value"
+                        },
+                        "ifChecks": [],
+                        "ifConfigurableInput": {}
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "run tank setpoint"
+                    },
+                    "show_label": true,
+                    "symbol": "rt",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "%"
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "I7EcZddXkyxMa6BxZneY8",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 345,
+                    "y": 75
+                },
+                "selected": false,
+                "type": "parameter_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "ifElseBlock": {
+                        "elseConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/fill_command.value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "vent"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "2"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "fill"
+                                }
+                            }
+                        ],
+                        "ifConfigurableInput": {
+                            "dropdown_label": "Tag Value",
+                            "type": "tag_value",
+                            "value": "tank_sim/fill_command.value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AUTOFILL COMMAND"
+                    },
+                    "show_label": true,
+                    "symbol": "C",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "dragging": false,
+                "height": 10,
+                "id": "uWAZdIOUHpsIUkV6BnWMr",
+                "measured": {
+                    "height": 10,
+                    "width": 10
+                },
+                "position": {
+                    "x": 345,
+                    "y": 120
+                },
+                "selected": false,
+                "type": "parameter_display",
+                "width": 10
+            },
+            {
+                "data": {
+                    "series": [
+                        {
+                            "channel_path": "tank_sim/run_tank_fill_target.value",
+                            "color": "#3a89e4",
+                            "label": "run tank fill target"
+                        },
+                        {
+                            "channel_path": "tank_sim/run_tank_fill.value",
+                            "color": "#368ce7",
+                            "label": "run tank fill"
+                        }
+                    ],
+                    "settings": {
+                        "cullScale": 3,
+                        "enableHistoricalRequests": true,
+                        "windowSeconds": "10"
+                    }
+                },
+                "dragging": false,
+                "height": 280,
+                "id": "EpV87RCjhXjG5-uhxrurK",
+                "measured": {
+                    "height": 280,
+                    "width": 597
+                },
+                "position": {
+                    "x": 303.7548979381703,
+                    "y": 239.80833826109887
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "channel_graph",
+                "width": 597
+            },
+            {
+                "data": {
+                    "series": [
+                        {
+                            "channel_path": "tank_sim/run_tank_pressure.value",
+                            "color": "#93d2ab",
+                            "label": "run tank pressure"
+                        },
+                        {
+                            "channel_path": "tank_sim/supply_tank_pressure.value",
+                            "color": "#82ca9d",
+                            "label": "supply tank pressure"
+                        }
+                    ],
+                    "settings": {
+                        "cullScale": 3,
+                        "enableHistoricalRequests": true,
+                        "windowSeconds": "10"
+                    }
+                },
+                "dragging": false,
+                "height": 281,
+                "id": "_djEgu5eyeBHqjJXAn3BV",
+                "measured": {
+                    "height": 281,
+                    "width": 600
+                },
+                "position": {
+                    "x": 302.55568708129897,
+                    "y": 582.117594521703
+                },
+                "resizing": false,
+                "selected": false,
+                "type": "channel_graph",
+                "width": 600
+            }
+        ],
+        "edges": [
+            {
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "type": "hex_color",
+                        "value": "#5c767f"
+                    },
+                    "strokeWidthConfigurableInput": {
+                        "type": "discrete_input_numerical",
+                        "value": "4"
+                    }
+                },
+                "id": "xy-edge__dB2CROAL5y3W5p1Enm89Yleft-1-vt9vePfojtRKix_amFQtFbottom-2",
+                "selected": false,
+                "source": "dB2CROAL5y3W5p1Enm89Y",
+                "sourceHandle": "left-1",
+                "style": {
+                    "stroke": "#555555",
+                    "strokeWidth": 2
+                },
+                "target": "vt9vePfojtRKix_amFQtF",
+                "targetHandle": "bottom-2",
+                "type": "edge"
+            },
+            {
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "type": "hex_color",
+                        "value": "#6a838a"
+                    },
+                    "strokeWidthConfigurableInput": {
+                        "type": "discrete_input_numerical",
+                        "value": "4"
+                    }
+                },
+                "id": "xy-edge__Rim0axwhbLzGT24irG3eJbottom-1-dB2CROAL5y3W5p1Enm89Yright-2",
+                "selected": false,
+                "source": "Rim0axwhbLzGT24irG3eJ",
+                "sourceHandle": "bottom-1",
+                "style": {
+                    "stroke": "#555555",
+                    "strokeWidth": 2
+                },
+                "target": "dB2CROAL5y3W5p1Enm89Y",
+                "targetHandle": "right-2",
+                "type": "edge"
+            },
+            {
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "type": "hex_color",
+                        "value": "#62787f"
+                    },
+                    "strokeWidthConfigurableInput": {
+                        "type": "discrete_input_numerical",
+                        "value": "4"
+                    }
+                },
+                "id": "xy-edge__cgaeaZWFtNKAWB8JWI4anleft-1-Rim0axwhbLzGT24irG3eJbottom-2",
+                "selected": false,
+                "source": "cgaeaZWFtNKAWB8JWI4an",
+                "sourceHandle": "left-1",
+                "style": {
+                    "stroke": "#555555",
+                    "strokeWidth": 2
+                },
+                "target": "Rim0axwhbLzGT24irG3eJ",
+                "targetHandle": "bottom-2",
+                "type": "edge"
+            },
+            {
+                "type": "edge",
+                "style": {
+                    "stroke": "#555555",
+                    "strokeWidth": 2
+                },
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "type": "hex_color",
+                        "value": "#435a62"
+                    },
+                    "strokeWidthConfigurableInput": {
+                        "type": "discrete_input_numerical",
+                        "value": "4"
+                    }
+                },
+                "source": "vt9vePfojtRKix_amFQtF",
+                "sourceHandle": "bottom-1",
+                "target": "dB2CROAL5y3W5p1Enm89Y",
+                "targetHandle": "top-2",
+                "id": "xy-edge__vt9vePfojtRKix_amFQtFbottom-1-dB2CROAL5y3W5p1Enm89Ytop-2",
+                "selected": false
+            },
+            {
+                "type": "edge",
+                "style": {
+                    "stroke": "#555555",
+                    "strokeWidth": 2
+                },
+                "data": {
+                    "fillColorConfigurableInput": {
+                        "type": "hex_color",
+                        "value": "#4c6066"
+                    },
+                    "strokeWidthConfigurableInput": {
+                        "type": "discrete_input_numerical",
+                        "value": "4"
+                    }
+                },
+                "source": "cgaeaZWFtNKAWB8JWI4an",
+                "sourceHandle": "left-1",
+                "target": "dB2CROAL5y3W5p1Enm89Y",
+                "targetHandle": "bottom-2",
+                "id": "xy-edge__cgaeaZWFtNKAWB8JWI4anleft-1-dB2CROAL5y3W5p1Enm89Ybottom-2",
+                "selected": false
+            }
+        ],
+        "viewport": {
+            "x": 476.2988409484867,
+            "y": 234.6018763832376,
+            "zoom": 0.6379909525916331
+        }
+    },
+    "background_settings": {
+        "bgColor": "#09090b",
+        "color": "#606060",
+        "gap": 12,
+        "size": 1,
+        "variant": "blank"
+    }
+}
