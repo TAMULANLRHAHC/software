@@ -80,7 +80,7 @@ void send_client_updates(CrowSocket &socket) {
             std::string query = it->second[0];
 
             //substring search
-            auto result = substring_search_tag_data_map(query, 20, tagData, tagDataMutex);
+            auto result = substring_search_tag_data_map(query, 1000, tagData, tagDataMutex);
 
             //convert to json
             auto json = convertTagDataMapTypeToJson(result);

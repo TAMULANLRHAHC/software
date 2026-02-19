@@ -27,8 +27,6 @@ export function HandMainDisplay() {
                         const current_value = tagData["HAOS:hand/led.actual_state.value"]
                         let value_to_update;
 
-                        console.log(current_value)
-
                         if (current_value === "1") {
                             value_to_update = 0
                         } else {

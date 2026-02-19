@@ -1,159 +1,137 @@
 #include "tcp.h"
-#include <iostream>
+#include <chrono>
 
-using asio::ip::tcp;
-
-// define static member
-asio::io_context TCPClient::io_;
-
-// ------------------------------------------------------------------
-// Constructor / Destructor
-// ------------------------------------------------------------------
-
-TCPClient::TCPClient(const std::string ip, const int port)
-    : ip_(ip),
-      port_(std::to_string(port)),
-      socket_(io_),
-      timer_(io_) {}
-
+TCPClient::TCPClient(const std::string& ip, int port)
+    : ip_(ip), port_(std::to_string(port)),
+      socket_(io_), connected_(false), run_thread_(false) {
+    startBackgroundConnect();
+}
 
 TCPClient::~TCPClient() {
+    stopBackgroundConnect();
     disconnect();
 }
 
-// ------------------------------------------------------------------
-// Connect
-// ------------------------------------------------------------------
-
-bool TCPClient::connect() {
-    asio::error_code ec;
-
-    tcp::resolver resolver(io_);
-    auto endpoints = resolver.resolve(ip_, port_, ec);
-    if (ec) {
-        std::cerr << "[TCP] Resolve error: " << ec.message() << "\n";
-        return false;
-    }
-
-    asio::connect(socket_, endpoints, ec);
-    if (ec) {
-        std::cerr << "[TCP] Connect error: " << ec.message() << "\n";
-        return false;
-    }
-
-    std::cout << "[TCP] Connected to " << ip_ << ":" << port_ << "\n";
-    return true;
+bool TCPClient::isConnected() const {
+    return connected_;
 }
-
-// ------------------------------------------------------------------
-// Disconnect
-// ------------------------------------------------------------------
 
 void TCPClient::disconnect() {
+    std::lock_guard<std::mutex> lock(socket_mutex_);
     if (socket_.is_open()) {
         asio::error_code ec;
-        socket_.shutdown(tcp::socket::shutdown_both, ec);
+        socket_.shutdown(asio::ip::tcp::socket::shutdown_both, ec);
         socket_.close(ec);
     }
+    connected_ = false;
 }
-
-bool TCPClient::isConnected() const {
-    return socket_.is_open();
-}
-
-// ------------------------------------------------------------------
-// Send JSON (newline terminated)
-// ------------------------------------------------------------------
 
 bool TCPClient::sendJSON(const nlohmann::json& j) {
-    if (!isConnected()) return false;
+    asio::ip::tcp::socket* socket_ptr = nullptr;
 
-    std::string data = j.dump() + "\n";
-
-    asio::error_code ec;
-    asio::write(socket_, asio::buffer(data), ec);
-
-    if (ec) {
-        std::cerr << "[TCP] Send error: " << ec.message() << "\n";
-        return false;
+    {
+        std::lock_guard<std::mutex> lock(socket_mutex_);
+        if (!connected_ || !socket_.is_open()) return false;
+        socket_ptr = &socket_;
     }
-
-    return true;
-}
-
-// ------------------------------------------------------------------
-// Read JSON (blocking until '\n')
-// ------------------------------------------------------------------
-
-bool TCPClient::readJSON(nlohmann::json& out, int timeout_ms)
-{
-    if (!isConnected())
-        return false;
-
-    asio::streambuf buffer;
-    asio::error_code ec;
-
-    bool read_finished = false;
-    bool timed_out = false;
-
-    // --------------- SETUP TIMEOUT ---------------
-    timer_.expires_after(std::chrono::milliseconds(timeout_ms));
-    timer_.async_wait([&](const asio::error_code& err){
-        if (!err) {        // timer expired
-            timed_out = true;
-            socket_.cancel();   // force read to stop
-        }
-    });
-
-    // --------------- START ASYNC READ ---------------
-    asio::async_read_until(
-        socket_,
-        buffer,
-        "\n",
-        [&](const asio::error_code& read_err, std::size_t){
-            ec = read_err;
-            read_finished = true;
-            timer_.cancel();   // stop timer if read succeeded
-        }
-    );
-
-    // --------------- RUN TEMPORARY EVENT LOOP ---------------
-    while (!read_finished && !timed_out)
-        io_.run_one();
-
-    io_.restart(); // ready for next op
-
-    // --------------- HANDLE TIMEOUT ---------------
-    if (timed_out) {
-        std::cerr << "[TCP] Read timeout\n";
-        return false;
-    }
-
-    // --------------- HANDLE READ ERRORS ---------------
-    if (ec) {
-        if (ec == asio::error::operation_aborted)
-            return false;  // was canceled by timeout
-
-        std::cerr << "[TCP] Read error: " << ec.message() << "\n";
-        return false;
-    }
-
-    // --------------- PARSE JSON ---------------
-    std::istream is(&buffer);
-    std::string line;
-    std::getline(is, line);
-
-    if (line.empty())
-        return false;
 
     try {
-        out = nlohmann::json::parse(line);
-    }
-    catch (const std::exception& e) {
-        std::cerr << "[TCP] JSON parse error: " << e.what() << "\n";
+        std::string data = j.dump() + "\n";
+        asio::error_code ec;
+        asio::write(*socket_ptr, asio::buffer(data), ec);
+        if (ec) {
+            std::cerr << "[TCP] Send failed: " << ec.message() << "\n";
+            disconnect(); // reconnect thread will handle reconnect
+            return false;
+        }
+        return true;
+    } catch (const std::exception& e) {
+        std::cerr << "[TCP] Send exception: " << e.what() << "\n";
+        disconnect();
         return false;
     }
-
-    return true;
 }
 
+bool TCPClient::readJSON(nlohmann::json& out) {
+    asio::ip::tcp::socket* socket_ptr = nullptr;
+
+    // Lock only to check connection and get a pointer
+    {
+        std::lock_guard<std::mutex> lock(socket_mutex_);
+        if (!connected_ || !socket_.is_open()) return false;
+        socket_ptr = &socket_;
+    }
+
+    try {
+        // Flush leftover bytes (non-blocking)
+        asio::error_code ec;
+        while (socket_ptr->available(ec) > 0) {
+            char discard[1024];
+            socket_ptr->read_some(asio::buffer(discard, 1024), ec);
+            if (ec) break;
+        }
+
+        // Blocking read (no mutex held)
+        asio::streambuf buffer;
+        asio::read_until(*socket_ptr, buffer, "\n", ec);
+        if (ec) {
+            std::cerr << "[TCP] Read failed: " << ec.message() << "\n";
+            disconnect();  // reconnect will take care of it
+            return false;
+        }
+
+        std::istream is(&buffer);
+        std::string line;
+        std::getline(is, line);
+        if (line.empty()) return false;
+
+        out = nlohmann::json::parse(line);
+        return true;
+    } catch (const std::exception& e) {
+        std::cerr << "[TCP] Read failed: " << e.what() << "\n";
+        disconnect();
+        return false;
+    }
+}
+
+
+
+void TCPClient::startBackgroundConnect(int retry_ms) {
+    if (run_thread_) return;
+    run_thread_ = true;
+
+    connect_thread_ = std::thread([this, retry_ms]() {
+        while (run_thread_) {
+            if (!connected_) {
+                try {
+                    asio::ip::tcp::resolver resolver(io_);
+                    auto endpoints = resolver.resolve(ip_, port_);
+                    asio::ip::tcp::socket temp_socket(io_);
+                    asio::connect(temp_socket, endpoints);
+
+                    std::lock_guard<std::mutex> lock(socket_mutex_);
+                    socket_ = std::move(temp_socket);
+
+                    // flush leftover bytes
+                    asio::error_code ec;
+                    while (socket_.available(ec) > 0) {
+                        char discard[1024];
+                        socket_.read_some(asio::buffer(discard, 1024), ec);
+                        if (ec) break;
+                    }
+
+                    connected_ = true;
+                    std::cout << "[TCP] Connected to " << ip_ << ":" << port_ << "\n";
+                } catch (const std::exception& e) {
+                    std::cerr << "[TCP] Connect failed: " << e.what() << "\n";
+                }
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(retry_ms));
+        }
+    });
+}
+
+void TCPClient::stopBackgroundConnect() {
+    run_thread_ = false;
+    if (connect_thread_.joinable()) connect_thread_.join();
+}

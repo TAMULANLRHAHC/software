@@ -54,13 +54,13 @@ void loop() {
 
         /// RECEIVE INCOMING DATA ///
         String jsonLine = currentClient.readStringUntil('\n');
-        Serial.print("Received: ");
-        Serial.println(jsonLine);
 
         incoming_data.clear();
         outgoing_data.clear();
 
         auto err = deserializeJson(incoming_data, jsonLine);
+        // Serial.print("Received: ");
+        // serializeJsonPretty(incoming_data, Serial);
 
         if (!err) {
             lastPacketTime = millis();
@@ -76,6 +76,9 @@ void loop() {
         serializeJson(outgoing_data, buffer);
         buffer += "\n";
         currentClient.print(buffer);
+
+        // Serial.print("Outoging: ");
+        // serializeJsonPretty(outgoing_data, Serial);
     }
 
     // -------- WATCHDOG CHECK -------- //
@@ -93,5 +96,6 @@ void loop() {
     if (currentClient && !currentClient.connected()) {
         Serial.println("Client disconnected");
         currentClient.stop();
+        currentClient = EthernetClient();  // reset to a fresh object
     }
 }

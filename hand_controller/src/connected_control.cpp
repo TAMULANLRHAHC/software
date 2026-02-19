@@ -12,6 +12,7 @@
 "relay_#_desired_state"
 
 /* ---------- TELEMETRY ---------- /
+"relay_#_actual_state"
 "AIN#_raw"
 
 /* ---------- VALID CONNECTION ---------- /
@@ -42,12 +43,6 @@ void run_connected_control_iteration() {
 
         int seconds = incoming_data["watchdog_timeout_seconds"];
         watchdogTimeoutMs = (unsigned long)seconds * 1000UL;
-
-        Serial.print("Watchdog timeout set to ");
-        Serial.print(seconds);
-        Serial.println(" seconds");
-
-        lastPacketTime = millis();
     }
 
 

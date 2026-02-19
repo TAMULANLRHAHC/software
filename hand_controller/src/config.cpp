@@ -26,6 +26,9 @@ const int RELAY_COUNT     = RELAY_NUM_END - RELAY_NUM_START + 1;
 const int RELAY_PINS[RELAY_COUNT] = {
     49, 47, 45, 43, 41, 39, 37, 35
 };
+int relay_watchdog_states[RELAY_COUNT] = {
+    0, 0, 0, 0, 0, 0, 0, 0 //all closed
+};
 
 
 // ---------- ANALOG ---------- //
@@ -52,7 +55,7 @@ unsigned long lastPacketTime = 0;
 unsigned long watchdogTimeoutMs = 1000;
 bool watchdogTriggered = false;
 
-int relay_watchdog_states[RELAY_COUNT] = {0};
+
 
 
 // =====================================================

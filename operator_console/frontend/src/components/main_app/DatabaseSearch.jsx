@@ -28,7 +28,7 @@ export function DatabaseSearch() {
     const [rows, setRows] = useState("");
 
     //tag name should always be first, and graph should always be last.
-    let column_names = {"tag": {}, "value": {"className": "w-[600px]"}, "units": {"className": "w-[600px]"}, "graph": {"series": "value", "domain": 10}};
+    let column_names = {"tag": {}, "value": {"className": "w-[600px]"}, "units": {"className": "w-[600px]"}};
     const [columns, setColumns] = useState("")
 
     //show tags whose fields are not being listed currently
