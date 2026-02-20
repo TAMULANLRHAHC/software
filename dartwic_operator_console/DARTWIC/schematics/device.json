@@ -1,0 +1,2483 @@
+{
+    "schematic_name": "default",
+    "schematic_file_name": "default",
+    "flow_instance": {
+        "nodes": [
+            {
+                "id": "zxgJV10Js6gVZfticxPeu",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 315
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_1_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_1_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_1_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_1_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_1_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 1"
+                    },
+                    "show_label": true,
+                    "symbol": "R1",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "qExH0V6G-IywStRs-CBXM",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 360
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_2_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_2_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_2_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_2_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_2_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 2"
+                    },
+                    "show_label": true,
+                    "symbol": "R2",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "jMa90ZWvQmZcP5Cw-q-U4",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 405
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_3_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_3_desired_state.buffer_size",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_3_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_3_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_3_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 3"
+                    },
+                    "show_label": true,
+                    "symbol": "R3",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "HTf1qq8MploekQsx2m0eK",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 450
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_4_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_4_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_4_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_4_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_4_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 4"
+                    },
+                    "show_label": true,
+                    "symbol": "R4",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "A97BOQ6kn7GKAyLJfW8KA",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 495
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_5_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_5_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_5_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_5_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_5_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 5"
+                    },
+                    "show_label": true,
+                    "symbol": "R5",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "udT60pZZnpeLT3L6_kcHE",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 540
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_6_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_6_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_6_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_6_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_6_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 6"
+                    },
+                    "show_label": true,
+                    "symbol": "R6",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "vByVS8l6yaIq9Pjo29yRI",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 585
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_7_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_7_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_7_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_7_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_7_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 7"
+                    },
+                    "show_label": true,
+                    "symbol": "R7",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "91-OVMHW_WOt1LoPmfq0t",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 630
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_8_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_8_desired_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_8_desired_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_8_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_8_actual_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "RELAY 8"
+                    },
+                    "show_label": true,
+                    "symbol": "R8",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "lR579OWfFqMTxizCmJpd3",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 315
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_1_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_1_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_1_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_1_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_1_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 1"
+                    },
+                    "show_label": true,
+                    "symbol": "W1",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "sGfEUtF-ejf6TROhgm5mn",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 360
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_2_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_2_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_2_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_2_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_2_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 2"
+                    },
+                    "show_label": true,
+                    "symbol": "W2",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "vmucHgT_g9bpMfX6tffOp",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 405
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_3_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_3_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_3_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_3_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_3_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 3"
+                    },
+                    "show_label": true,
+                    "symbol": "W3",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "hQkJsUQ5T_rSrdncyxPjx",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 450
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_4_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_4_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_4_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_4_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_4_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 4"
+                    },
+                    "show_label": true,
+                    "symbol": "W4",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "QuR4CRxYS0cSlFdppaE-t",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 495
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_5_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_5_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_5_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_5_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_5_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 5"
+                    },
+                    "show_label": true,
+                    "symbol": "W5",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "Zjt-px_3c9J6lYxTQtTN9",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 540
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_6_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_6_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_6_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_6_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_6_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 6"
+                    },
+                    "show_label": true,
+                    "symbol": "W6",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "qdQauvPG2K638c2bjjgI-",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 585
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_7_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_7_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_7_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_7_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_7_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 7"
+                    },
+                    "show_label": true,
+                    "symbol": "W7",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "nzTO4Kyi9niB49hURjHp6",
+                "type": "control_display",
+                "position": {
+                    "x": 660,
+                    "y": 630
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_8_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:hand_controller/relay_8_watchdog_state.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:hand_controller/relay_8_watchdog_state.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_8_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/relay_8_watchdog_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG 8"
+                    },
+                    "show_label": true,
+                    "symbol": "W8",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "Uxbkh-cQpKxyv6SnrMrTU",
+                "type": "box",
+                "position": {
+                    "x": 495,
+                    "y": 285
+                },
+                "height": 430,
+                "width": 325,
+                "data": {
+                    "class_name": "",
+                    "general_settings": {
+                        "top_label": "RELAYS"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 325,
+                    "height": 430
+                },
+                "dragging": false,
+                "zIndex": -1000,
+                "resizing": false
+            },
+            {
+                "id": "pqtcu73RxQCrpFW1Fw_cO",
+                "type": "parameter_display",
+                "position": {
+                    "x": 975,
+                    "y": 345
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/AIN0_raw.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AIN0"
+                    },
+                    "show_label": true,
+                    "symbol": "A",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "counts"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "C86bjpnc7ka4-lXFNa5pm",
+                "type": "parameter_display",
+                "position": {
+                    "x": 975,
+                    "y": 390
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/AIN1_raw.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AIN1"
+                    },
+                    "show_label": true,
+                    "symbol": "A",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "counts"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "a-C3DG8igH6O-oDINR7X6",
+                "type": "parameter_display",
+                "position": {
+                    "x": 975,
+                    "y": 435
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/AIN2_raw.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AIN2"
+                    },
+                    "show_label": true,
+                    "symbol": "A",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "counts"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "-38ERm3iv3jNbBxcYTeGy",
+                "type": "parameter_display",
+                "position": {
+                    "x": 975,
+                    "y": 480
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/AIN3_raw.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AIN3"
+                    },
+                    "show_label": true,
+                    "symbol": "A",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "counts"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "c11ckRii7xCPuypi2epH9",
+                "type": "parameter_display",
+                "position": {
+                    "x": 975,
+                    "y": 525
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/AIN4_raw.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "AIN4"
+                    },
+                    "show_label": true,
+                    "symbol": "A",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "counts"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "5dR_3oLVw6pVb0vC_1EoD",
+                "type": "channel_graph",
+                "position": {
+                    "x": 1155,
+                    "y": 345
+                },
+                "height": 430,
+                "width": 640,
+                "data": {
+                    "series": [
+                        {
+                            "channel_path": "MY_NODE:hand_controller/AIN0_raw.value",
+                            "label": "MY_NODE:hand_controller/AIN0_raw.value",
+                            "color": "#ffffff"
+                        },
+                        {
+                            "channel_path": "MY_NODE:hand_controller/AIN1_raw.value",
+                            "label": "MY_NODE:hand_controller/AIN1_raw.value",
+                            "color": "#6186f5"
+                        },
+                        {
+                            "channel_path": "MY_NODE:hand_controller/AIN2_raw.value",
+                            "label": "MY_NODE:hand_controller/AIN2_raw.value",
+                            "color": "#df5d5d"
+                        },
+                        {
+                            "channel_path": "MY_NODE:hand_controller/AIN3_raw.value",
+                            "label": "MY_NODE:hand_controller/AIN3_raw.value",
+                            "color": "#f0f17e"
+                        },
+                        {
+                            "channel_path": "MY_NODE:hand_controller/AIN4_raw.value",
+                            "label": "MY_NODE:hand_controller/AIN4_raw.value",
+                            "color": "#b07430"
+                        }
+                    ],
+                    "settings": {
+                        "windowSeconds": "10",
+                        "cullScale": 3,
+                        "enableHistoricalRequests": true
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 640,
+                    "height": 430
+                },
+                "dragging": false,
+                "resizing": false
+            },
+            {
+                "id": "AQb9ms8p_uvZcEpiKZ9ej",
+                "type": "box",
+                "position": {
+                    "x": 930,
+                    "y": 285
+                },
+                "height": 535,
+                "width": 895,
+                "data": {
+                    "class_name": "",
+                    "general_settings": {
+                        "top_label": "ANALOG CHANNELS"
+                    }
+                },
+                "selected": true,
+                "measured": {
+                    "width": 895,
+                    "height": 535
+                },
+                "dragging": false,
+                "zIndex": -1000,
+                "resizing": false
+            },
+            {
+                "id": "0eTM8gvCvjGS9s23uLoTe",
+                "type": "control_display",
+                "position": {
+                    "x": 525,
+                    "y": 90
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "tag_update",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "ifConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:servervariables/loops.dacs_loop.running.value",
+                                "dropdown_label": "Tag Value"
+                            },
+                            "ifChecks": [
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    }
+                                },
+                                {
+                                    "conditionalConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "0"
+                                    },
+                                    "thenConfigurableInput": {
+                                        "type": "discrete_input",
+                                        "value": "1"
+                                    }
+                                }
+                            ],
+                            "elseConfigurableInput": {
+                                "type": "tag_value",
+                                "value": "MY_NODE:servervariables/loops.dacs_loop.running.value",
+                                "dropdown_label": "Tag Value"
+                            }
+                        },
+                        "selected_tag": "MY_NODE:servervariables/loops.dacs_loop.running.value"
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:servervariables/loops.dacs_loop.running.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "⚫"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:servervariables/loops.dacs_loop.running.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "DACS LOOP"
+                    },
+                    "show_label": true,
+                    "symbol": "L",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "1cXOVg__ooZ2c4h-VbF1E",
+                "type": "control_display",
+                "position": {
+                    "x": 705,
+                    "y": 90
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "number",
+                        "selected_tag": "MY_NODE:servervariables/loops.dacs_loop.target_loop_frequency.value"
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "discrete_input",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": ""
+                            },
+                            "ifChecks": [],
+                            "ifConfigurableInput": {}
+                        },
+                        "selected_tag": ""
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:servervariables/loops.dacs_loop.target_loop_frequency.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "TARGET FREQ"
+                    },
+                    "show_label": true,
+                    "symbol": "TF",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "Hz"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "zQRQNkNaTfUw0R0VAKBoe",
+                "type": "parameter_display",
+                "position": {
+                    "x": 705,
+                    "y": 165
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:servervariables/loops.dacs_loop.actual_loop_frequency.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "ACTUAL FREQ"
+                    },
+                    "show_label": true,
+                    "symbol": "AF",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "Hz"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "SNESg8QoZqpj8juE26OV3",
+                "type": "control_display",
+                "position": {
+                    "x": 960,
+                    "y": 135
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "number",
+                        "selected_tag": "MY_NODE:hand_controller/watchdog_timeout_seconds.value"
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": ""
+                    },
+                    "selected_tab": "discrete_input",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": ""
+                            },
+                            "ifChecks": [],
+                            "ifConfigurableInput": {}
+                        },
+                        "selected_tag": ""
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/watchdog_timeout_seconds.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "WATCHDOG TIMEOUT"
+                    },
+                    "show_label": true,
+                    "symbol": "WT",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "s"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "PPkGrou0M6aiXJuaae08Z",
+                "type": "parameter_display",
+                "position": {
+                    "x": 960,
+                    "y": 105
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/connected.value",
+                            "dropdown_label": "Tag Value"
+                        },
+                        "ifChecks": [
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "1"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🟢"
+                                }
+                            },
+                            {
+                                "conditionalConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "0"
+                                },
+                                "thenConfigurableInput": {
+                                    "type": "discrete_input",
+                                    "value": "🔴"
+                                }
+                            }
+                        ],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:hand_controller/connected.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "DEVICE CONNECTED"
+                    },
+                    "show_label": true,
+                    "symbol": "C",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    },
+                    "general_settings": {
+                        "general_alarming_tags": [
+                            "MY_NODE:hand_controller/connected.value"
+                        ]
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            },
+            {
+                "id": "HTsoGoEEUWwg2CAEmtzdK",
+                "type": "box",
+                "position": {
+                    "x": 495,
+                    "y": 60
+                },
+                "height": 175,
+                "width": 370,
+                "data": {
+                    "class_name": "",
+                    "general_settings": {
+                        "top_label": "DACS LOOP"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 370,
+                    "height": 175
+                },
+                "dragging": false,
+                "zIndex": -1000,
+                "resizing": false
+            },
+            {
+                "id": "oA4BulQFdpyn8_QJ9utXP",
+                "type": "box",
+                "position": {
+                    "x": 930,
+                    "y": 60
+                },
+                "height": 175,
+                "width": 235,
+                "data": {
+                    "class_name": "",
+                    "general_settings": {
+                        "top_label": "DEVICE"
+                    }
+                },
+                "selected": false,
+                "measured": {
+                    "width": 235,
+                    "height": 175
+                },
+                "zIndex": -1000,
+                "dragging": false,
+                "resizing": false
+            }
+        ],
+        "edges": [],
+        "viewport": {
+            "x": -294.3411610400692,
+            "y": 109.5321450298826,
+            "zoom": 0.9137508168130748
+        }
+    },
+    "background_settings": {
+        "variant": "blank",
+        "gap": 12,
+        "size": 1,
+        "bgColor": "#09090b",
+        "color": "#606060"
+    }
+}

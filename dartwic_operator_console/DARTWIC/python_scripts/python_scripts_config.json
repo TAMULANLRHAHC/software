@@ -5,10 +5,13 @@
     "automations/auto_fill.py": {
         "run_on_startup": true
     },
+    "control.py": {
+        "run_on_startup": true
+    },
     "other/fill_sim.py": {
         "run_on_startup": true
     },
-    "control.py": {
+    "sensors.py": {
         "run_on_startup": true
     }
 }
