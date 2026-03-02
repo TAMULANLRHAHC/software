@@ -1,3 +1,0 @@
-C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug/CMakeFiles/hydraulic_arm_operation_software.dir
-C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/saint/Documents/Code/Github/operator_console/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,82 @@
+{
+    "schematic_name": "default",
+    "schematic_file_name": "default",
+    "flow_instance": {
+        "nodes": [
+            {
+                "id": "hKgN_TmuKHT5yTZHtHif4",
+                "type": "control_display",
+                "position": {
+                    "x": 134.81464270177761,
+                    "y": 209.9124928066561
+                },
+                "height": 10,
+                "width": 10,
+                "data": {
+                    "general_settings": {
+                        "allow_button_click_tag": "",
+                        "bottom_label": ""
+                    },
+                    "discrete_input": {
+                        "input_type": "discrete",
+                        "selected_tag": ""
+                    },
+                    "function_call": {
+                        "inputList": [],
+                        "selected_function": "toggle_open_hand"
+                    },
+                    "selected_tab": "function_call",
+                    "tag_update": {
+                        "ifElseBlock": {
+                            "elseConfigurableInput": {
+                                "type": "discrete_input",
+                                "value": ""
+                            },
+                            "ifChecks": [],
+                            "ifConfigurableInput": {}
+                        },
+                        "selected_tag": ""
+                    },
+                    "ifElseBlock": {
+                        "ifConfigurableInput": {},
+                        "ifChecks": [],
+                        "elseConfigurableInput": {
+                            "type": "tag_value",
+                            "value": "MY_NODE:controls/open_hand.last_known_state.value",
+                            "dropdown_label": "Tag Value"
+                        }
+                    },
+                    "labelConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": "TOGGLE OPEN"
+                    },
+                    "show_label": true,
+                    "symbol": "O",
+                    "unitsConfigurableInput": {
+                        "type": "discrete_input",
+                        "value": ""
+                    }
+                },
+                "selected": true,
+                "measured": {
+                    "width": 10,
+                    "height": 10
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [],
+        "viewport": {
+            "x": 264.2576288841122,
+            "y": 146.40613018799002,
+            "zoom": 1.1486983549970349
+        }
+    },
+    "background_settings": {
+        "variant": "blank",
+        "gap": 12,
+        "size": 1,
+        "bgColor": "#09090b",
+        "color": "#606060"
+    }
+}

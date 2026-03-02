@@ -1,0 +1,30 @@
+[
+    {
+        "data": {
+            "ifElseBlock": {
+                "ifConfigurableInput": {},
+                "ifChecks": [],
+                "elseConfigurableInput": {
+                    "type": "tag_value",
+                    "value": "localtime.value",
+                    "dropdown_label": "Tag Value"
+                }
+            },
+            "labelConfigurableInput": {
+                "type": "discrete_input",
+                "value": "LOCAL TIME:"
+            },
+            "unitsConfigurableInput": {
+                "type": "discrete_input",
+                "value": ""
+            },
+            "general_settings": {
+                "top_label": ""
+            }
+        },
+        "height": 10,
+        "type": "label",
+        "width": 10,
+        "id": 1762484187082
+    }
+]
