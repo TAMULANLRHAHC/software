@@ -1,10 +1,10 @@
 {
-    "node_name": "TEST_NODE",
-    "python_home_directory": "C:/Users/kempt/AppData/Local/Programs/Python/Python312",
-    "resources_directory": "../",
-    "run_rapid_recording_startup_benchmark": false,
-    "run_rapid_startup_benchmark": false,
-    "server_admin_password": "admin",
-    "server_ip": "127.0.0.1",
-    "server_port": 7000
+  "node_name": "TEST_NODE",
+  "python_home_directory": "C:/Users/kempt/AppData/Local/Programs/Python/Python312",
+  "resources_directory": "../",
+  "run_rapid_recording_startup_benchmark": true,
+  "run_rapid_startup_benchmark": true,
+  "server_admin_password": "admin",
+  "server_ip": "127.0.0.1",
+  "server_port": 7000
 }
