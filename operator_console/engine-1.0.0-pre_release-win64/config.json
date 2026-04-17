@@ -1,6 +1,6 @@
 {
   "node_name": "TEST_NODE",
-  "python_home_directory": "C:/Users/kempt/AppData/Local/Programs/Python/Python312",
+  "python_home_directory": "../python_interpreter",
   "resources_directory": "../",
   "run_rapid_recording_startup_benchmark": true,
   "run_rapid_startup_benchmark": true,
