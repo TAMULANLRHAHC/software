@@ -145,10 +145,7 @@ class _GeneratorContextManager(
             except StopIteration:
                 return False
             else:
-                try:
-                    raise RuntimeError("generator didn't stop")
-                finally:
-                    self.gen.close()
+                raise RuntimeError("generator didn't stop")
         else:
             if value is None:
                 # Need to force instantiation so we can reliably
@@ -190,10 +187,7 @@ class _GeneratorContextManager(
                     raise
                 exc.__traceback__ = traceback
                 return False
-            try:
-                raise RuntimeError("generator didn't stop after throw()")
-            finally:
-                self.gen.close()
+            raise RuntimeError("generator didn't stop after throw()")
 
 class _AsyncGeneratorContextManager(
     _GeneratorContextManagerBase,
@@ -218,10 +212,7 @@ class _AsyncGeneratorContextManager(
             except StopAsyncIteration:
                 return False
             else:
-                try:
-                    raise RuntimeError("generator didn't stop")
-                finally:
-                    await self.gen.aclose()
+                raise RuntimeError("generator didn't stop")
         else:
             if value is None:
                 # Need to force instantiation so we can reliably
@@ -263,10 +254,7 @@ class _AsyncGeneratorContextManager(
                     raise
                 exc.__traceback__ = traceback
                 return False
-            try:
-                raise RuntimeError("generator didn't stop after athrow()")
-            finally:
-                await self.gen.aclose()
+            raise RuntimeError("generator didn't stop after athrow()")
 
 
 def contextmanager(func):
@@ -457,7 +445,7 @@ class suppress(AbstractContextManager):
             return
         if issubclass(exctype, self._exceptions):
             return True
-        if issubclass(exctype, BaseExceptionGroup):
+        if issubclass(exctype, ExceptionGroup):
             match, rest = excinst.split(self._exceptions)
             if rest is None:
                 return True

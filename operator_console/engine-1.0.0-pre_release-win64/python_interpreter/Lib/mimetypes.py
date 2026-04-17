@@ -120,13 +120,7 @@ class MimeTypes:
         but non-standard types.
         """
         url = os.fspath(url)
-        p = urllib.parse.urlparse(url)
-        if p.scheme and len(p.scheme) > 1:
-            scheme = p.scheme
-            url = p.path
-        else:
-            scheme = None
-            url = os.path.splitdrive(url)[1]
+        scheme, url = urllib.parse._splittype(url)
         if scheme == 'data':
             # syntax of data URLs:
             # dataurl   := "data:" [ mediatype ] [ ";base64" ] "," data
@@ -551,8 +545,6 @@ def _default_mime_types():
         '.csv'    : 'text/csv',
         '.html'   : 'text/html',
         '.htm'    : 'text/html',
-        '.md'     : 'text/markdown',
-        '.markdown': 'text/markdown',
         '.n3'     : 'text/n3',
         '.txt'    : 'text/plain',
         '.bat'    : 'text/plain',

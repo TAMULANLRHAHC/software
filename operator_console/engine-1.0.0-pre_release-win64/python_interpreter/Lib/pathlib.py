@@ -359,9 +359,9 @@ class PurePath(object):
         paths = []
         for arg in args:
             if isinstance(arg, PurePath):
-                if arg._flavour is not self._flavour:
+                if arg._flavour is ntpath and self._flavour is posixpath:
                     # GH-103631: Convert separators for backwards compatibility.
-                    paths.append(arg.as_posix())
+                    paths.extend(path.replace('\\', '/') for path in arg._raw_paths)
                 else:
                     paths.extend(arg._raw_paths)
             else:
@@ -630,7 +630,8 @@ class PurePath(object):
         if not self.name:
             raise ValueError("%r has an empty name" % (self,))
         f = self._flavour
-        if not name or f.sep in name or (f.altsep and f.altsep in name) or name == '.':
+        drv, root, tail = f.splitroot(name)
+        if drv or root or not tail or f.sep in tail or (f.altsep and f.altsep in tail):
             raise ValueError("Invalid name %r" % (name))
         return self._from_parsed_parts(self.drive, self.root,
                                        self._tail[:-1] + [name])
@@ -1005,7 +1006,7 @@ class Path(PurePath):
     def open(self, mode='r', buffering=-1, encoding=None,
              errors=None, newline=None):
         """
-        Open the file pointed to by this path and return a file object, as
+        Open the file pointed by this path and return a file object, as
         the built-in open() function does.
         """
         if "b" not in mode:
