@@ -1,0 +1,1276 @@
+[
+  {
+    "key": "control/pointer_finger_extend",
+    "value": 0.0,
+    "commanded_by": "thread:32884",
+    "data_frame": "default",
+    "timestamp": 1776452400033094900,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_automation_target_frequency",
+    "value": 100.0,
+    "commanded_by": "operator:695a5e95d9960d85",
+    "data_frame": "default",
+    "timestamp": 1776118478804110800,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_3_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663611800,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_automation_actual_frequency",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452446722611300,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_automation_running",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452124954742500,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/thumb_opposition_state",
+    "value": 0.0,
+    "commanded_by": "thread:32884",
+    "data_frame": "default",
+    "timestamp": 1776452400033166900,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_1_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663609300,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "node/unix_nanoseconds",
+    "value": 1.7764524467226655e+18,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452446722665600,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 0.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_actual_frequency",
+    "value": 62.11180124223603,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452446722630500,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "sensors/relay_1_pressure",
+    "value": -0.25,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "PSIG",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "hand/ain_1",
+    "scale": 0.125,
+    "offset": -62.5,
+    "control_policy": "automatic",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_5_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663613600,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_3",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control_automation",
+    "data_frame": "default",
+    "timestamp": 1776452124938437100,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/info.connected",
+    "value": 1.0,
+    "commanded_by": "caesar-loop:modbus_connection_monitor_hand",
+    "data_frame": "default",
+    "timestamp": 1776452446129898400,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_automation_hold",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452124951214000,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_target_frequency",
+    "value": 100.0,
+    "commanded_by": "operator:695a5e95d9960d85",
+    "data_frame": "default",
+    "timestamp": 1776118480478349900,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "node/data_queue_size_approx",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452446722665600,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/thumb_opposition",
+    "value": 1.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452424577475500,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_1",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control_automation",
+    "data_frame": "default",
+    "timestamp": 1776452124938413500,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_hold",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776124392151343500,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/control_running",
+    "value": 1.0,
+    "commanded_by": "thread:28428",
+    "data_frame": "default",
+    "timestamp": 1776447251405721900,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_7_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663615400,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/data_target_frequency",
+    "value": 100.0,
+    "commanded_by": "operator:695a5e95d9960d85",
+    "data_frame": "default",
+    "timestamp": 1776118482379648300,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/data_actual_frequency",
+    "value": 40.53177691309987,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776452446722658600,
+    "units": "Hz",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/data_running",
+    "value": 1.0,
+    "commanded_by": "thread:28428",
+    "data_frame": "default",
+    "timestamp": 1776447251414394900,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/data_hold",
+    "value": 0.0,
+    "commanded_by": "caesar-loop:general_program_checks_thread",
+    "data_frame": "default",
+    "timestamp": 1776124395411908800,
+    "units": "True/False",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_2_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663610900,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_2",
+    "value": 0.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452347123535900,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_4_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663612700,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_4",
+    "value": 0.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452347683050200,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "sensors/relay_3_pressure",
+    "value": -0.125,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "PSIG",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "hand/ain_2",
+    "scale": 0.125,
+    "offset": -62.5,
+    "control_policy": "automatic",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_5",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control_automation",
+    "data_frame": "default",
+    "timestamp": 1776452124938455100,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_6_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663614500,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_6",
+    "value": 0.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452348348049900,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_7",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control_automation",
+    "data_frame": "default",
+    "timestamp": 1776452124938471500,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_8_state",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/control",
+    "data_frame": "default",
+    "timestamp": 1776452446663616300,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/control",
+    "active_controller": "task:hand/control",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/relay_8",
+    "value": 0.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452349017438600,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/ain_0",
+    "value": 500.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "sensors/hpu_pressure",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/ain_1",
+    "value": 498.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "sensors/relay_1_pressure",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "sensors/relay_7_pressure",
+    "value": -1.5,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446802210800,
+    "units": "PSIG",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "hand/ain_4",
+    "scale": 0.125,
+    "offset": -62.5,
+    "control_policy": "automatic",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/ain_2",
+    "value": 499.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "sensors/relay_3_pressure",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/ain_3",
+    "value": 499.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "sensors/relay_5_pressure",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "hand/ain_4",
+    "value": 488.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446802210800,
+    "units": "",
+    "stale_timeout": 2.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "sensors/relay_7_pressure",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "observe_only",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/hand_fingers_extend_state",
+    "value": 0.0,
+    "commanded_by": "thread:32884",
+    "data_frame": "default",
+    "timestamp": 1776452400033141800,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/pointer_finger_extend_state",
+    "value": 0.0,
+    "commanded_by": "thread:32884",
+    "data_frame": "default",
+    "timestamp": 1776452400033130100,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "sensors/relay_5_pressure",
+    "value": -0.125,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "PSIG",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "hand/ain_3",
+    "scale": 0.125,
+    "offset": -62.5,
+    "control_policy": "automatic",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/hand_fingers_extend",
+    "value": 1.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452407899973000,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/thumb_extend",
+    "value": 1.0,
+    "commanded_by": "operator:ea8f7152a39f89f9",
+    "data_frame": "default",
+    "timestamp": 1776452417564505200,
+    "units": "",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "control/thumb_extend_state",
+    "value": 0.0,
+    "commanded_by": "thread:32884",
+    "data_frame": "default",
+    "timestamp": 1776452400033151600,
+    "units": "",
+    "stale_timeout": 1.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "",
+    "scale": 1.0,
+    "offset": 0.0,
+    "control_policy": "free",
+    "control_owner": "",
+    "active_controller": "",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  },
+  {
+    "key": "sensors/hpu_pressure",
+    "value": 0.0,
+    "commanded_by": "caesar-task:hand/data",
+    "data_frame": "default",
+    "timestamp": 1776452446801159800,
+    "units": "PSIG",
+    "stale_timeout": 0.0,
+    "record_on_value_change": 1.0,
+    "buffer_size": 1,
+    "mapped_channel": "hand/ain_0",
+    "scale": 0.125,
+    "offset": -62.5,
+    "control_policy": "automatic",
+    "control_owner": "task:hand/data",
+    "active_controller": "task:hand/data",
+    "command_blacklist": [
+      ""
+    ],
+    "command_whitelist": [
+      ""
+    ],
+    "buffer": [
+      0.0
+    ]
+  }
+]

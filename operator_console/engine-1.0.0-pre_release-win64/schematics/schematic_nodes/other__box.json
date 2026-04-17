@@ -1,0 +1,12 @@
+{
+    "category": "Other",
+    "name": "Box",
+    "node": {
+        "data": {
+            "class_name": ""
+        },
+        "height": 100,
+        "type": "box",
+        "width": 100
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "arguments": {
+        "mappings": [
+            {
+                "channel": "hand/relay_1",
+                "register": 0,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_2",
+                "register": 1,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_3",
+                "register": 2,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_4",
+                "register": 3,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_5",
+                "register": 4,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_6",
+                "register": 5,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_7",
+                "register": 6,
+                "register_type": "coil"
+            },
+            {
+                "channel": "hand/relay_8",
+                "register": 7,
+                "register_type": "coil"
+            }
+        ],
+        "module_instance_name": "hand",
+        "readback_interval_seconds": 0.5
+    },
+    "metadata": {},
+    "portal_name": "hand",
+    "task_name": "control",
+    "task_type": "modbus.write"
+}

@@ -1,0 +1,11 @@
+{
+  "module_type": "modbus_tcp_client",
+  "name": "hand",
+  "parameters": {
+    "server_ip": "192.168.1.116",
+    "server_port": 502,
+    "tv_sec": 3,
+    "tv_usec": 0
+  },
+  "plugin": "modbus_tcp_client"
+}

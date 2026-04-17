@@ -1,0 +1,31 @@
+{
+    "arguments": {
+        "mappings": [
+            {
+                "channel": "hand/ain_0",
+                "register": 9
+            },
+            {
+                "channel": "hand/ain_1",
+                "register": 1
+            },
+            {
+                "channel": "hand/ain_2",
+                "register": 2
+            },
+            {
+                "channel": "hand/ain_3",
+                "register": 3
+            },
+            {
+                "channel": "hand/ain_4",
+                "register": 10
+            }
+        ],
+        "module_instance_name": "hand"
+    },
+    "metadata": {},
+    "portal_name": "hand",
+    "task_name": "data",
+    "task_type": "modbus.read_input_registers"
+}
