@@ -2,63 +2,56 @@
 #define MAIN_H
 
 #include <Arduino.h>
-#include <ArduinoJson.h>
 #include <Ethernet.h>
-
-// =====================================================
-// ================= NETWORK SETTINGS ==================
-// =====================================================
+#include <Wire.h>
+#include <Adafruit_ADS1X15.h>
+#include <ArduinoRS485.h>
+#include <ArduinoModbus.h>
 
 extern byte mac[];
 extern IPAddress ip;
-extern const uint16_t SERVER_PORT;
 extern const int ETHERNET_SPI_CS_PIN;
 
-
-// =====================================================
-// ================= CONTROL/ DAQ SETTINGS =============
-// =====================================================
-
-// ---------- RELAY ---------- //
 extern const int RELAY_NUM_START;
 extern const int RELAY_NUM_END;
 extern const int RELAY_COUNT;
-
 extern const int RELAY_PINS[];
 
+extern const int ADS_ANALOG_NUM_START;
+extern const int ADS_ANALOG_NUM_END;
+extern const int ADS_ANALOG_COUNT;
 
-// ---------- ANALOG ---------- //
-extern const int ANALOG_NUM_START;
-extern const int ANALOG_NUM_END;
-extern const int ANALOG_COUNT;
+extern const int INTERNAL_ANALOG_COUNT;
+extern const int INTERNAL_ANALOG_NUM_START;
+extern const int INTERNAL_ANALOG_NUM_END;
+extern const int INTERNAL_ANALOG_PINS[];
 
-extern const int ANALOG_PINS[];
+extern const uint16_t RELAY_COIL_START;
+extern const uint16_t WATCHDOG_COIL_START;
+extern const uint16_t COIL_COUNT;
 
+extern const uint16_t VOLTAGE_INPUT_REGISTER_START;
+extern const uint16_t RELAY_STATE_INPUT_REGISTER_START;
+extern const uint16_t INPUT_REGISTER_COUNT;
 
-// =====================================================
-// ================= DATA SETTINGS =====================
-// =====================================================
+extern const unsigned long WATCHDOG_TIMEOUT_MS;
+extern const unsigned long INPUT_REGISTER_UPDATE_INTERVAL_MS;
 
-// ---------- GLOBAL ONE-SHOT DATA ---------- //
-extern JsonDocument incoming_data;
-extern JsonDocument outgoing_data;
-
-// ---------- GLOBAL PERSISTENT DATA ---------- //
-// WATCHDOG
-extern unsigned long lastPacketTime;
-extern unsigned long watchdogTimeoutMs;
+extern unsigned long lastCoilUpdateTime;
+extern unsigned long lastInputRegisterUpdateTime;
 extern bool watchdogTriggered;
-
 extern int relay_watchdog_states[];
 
+extern Adafruit_ADS1115 ads1;
+extern Adafruit_ADS1115 ads2;
+extern Adafruit_ADS1115* ads_list[2];
 
-// =====================================================
-// ================= OTHER =============================
-// =====================================================
+extern EthernetServer ethServer;
+extern ModbusTCPServer modbusTCPServer;
 
-// other here
-void run_connected_control_iteration();
-// when connection is NOT valid
-void run_watchdog_control_iteration();
+void configure_modbus();
+void update_input_registers();
+void apply_live_relay_states();
+void apply_watchdog_relay_states();
 
 #endif

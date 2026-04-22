@@ -1,106 +1,107 @@
 #include "main.h"
 
-// TCP server
-EthernetServer server(SERVER_PORT);
-
-// Persistent client object
-EthernetClient currentClient;
-
-/* ---------- BAKED-IN TELEMETRY ---------- /
- * "heatbeat"
- */
-
-
 void setup() {
     Serial.begin(115200);
     delay(1000);
-    Serial.println("Starting W5500...");
+    Serial.println("Starting hand controller Modbus server...");
 
-    // Optional status pin
     pinMode(2, OUTPUT);
     digitalWrite(2, LOW);
 
-    // Initialize SPI CS pin
-    Ethernet.init(ETHERNET_SPI_CS_PIN);
-
-    // Static IP
-    Ethernet.begin(mac, ip);
-
-    Serial.print("Server IP: ");
-    Serial.println(Ethernet.localIP());
-
-    server.begin();
-    Serial.print("TCP server started on port ");
-    Serial.println(SERVER_PORT);
-
-    // Initialize relay pins as outputs
-    for (int i = 0; i < RELAY_COUNT; i++) {
+    for (int i = 0; i < RELAY_COUNT; ++i) {
         pinMode(RELAY_PINS[i], OUTPUT);
         digitalWrite(RELAY_PINS[i], LOW);
     }
 
-    lastPacketTime = millis();
+    Wire.begin();
+    Wire.setClock(400000);
+
+    if (!ads1.begin(0x49)) {
+        Serial.println("Failed to initialize ADS1115 #1");
+    }
+
+    if (!ads2.begin(0x48)) {
+        Serial.println("Failed to initialize ADS1115 #2");
+    }
+
+    ads1.setGain(GAIN_TWOTHIRDS);
+    ads2.setGain(GAIN_TWOTHIRDS);
+    ads1.setDataRate(RATE_ADS1115_860SPS);
+    ads2.setDataRate(RATE_ADS1115_860SPS);
+
+    Ethernet.init(ETHERNET_SPI_CS_PIN);
+    Ethernet.begin(mac, ip);
+
+    if (Ethernet.hardwareStatus() == EthernetNoHardware) {
+        Serial.println("Ethernet shield was not found.");
+        while (true) {
+            delay(1);
+        }
+    }
+
+    if (Ethernet.linkStatus() == LinkOFF) {
+        Serial.println("Ethernet cable is not connected.");
+    }
+
+    ethServer.begin();
+
+    if (!modbusTCPServer.begin()) {
+        Serial.println("Failed to start Modbus TCP server.");
+        while (true) {
+            delay(1);
+        }
+    }
+
+    configure_modbus();
+    update_input_registers();
+
+    lastCoilUpdateTime = millis();
+    lastInputRegisterUpdateTime = millis();
+
+    Serial.print("Modbus TCP server IP: ");
+    Serial.println(Ethernet.localIP());
+    Serial.println("Listening on port 502");
 }
 
 void loop() {
+    EthernetClient client = ethServer.available();
 
-    // Accept new client if none connected
-    if (!currentClient || !currentClient.connected()) {
-        EthernetClient newClient = server.available();
-        if (newClient) {
-            currentClient = newClient;
-            Serial.println("Client connected!");
-        }
-    }
+    if (client) {
+        modbusTCPServer.accept(client);
+        Serial.println("Modbus client connected");
 
-    //// CLIENT CONNECTED ////
-    if (currentClient && currentClient.connected() && currentClient.available()) {
+        while (client.connected()) {
+            int requestsHandled = 0;
 
-        /// RECEIVE INCOMING DATA ///
-        String jsonLine = currentClient.readStringUntil('\n');
+            if (client.available() > 0) {
+                requestsHandled = modbusTCPServer.poll();
+            }
 
-        incoming_data.clear();
-        outgoing_data.clear();
+            if (requestsHandled > 0) {
+                lastCoilUpdateTime = millis();
+                watchdogTriggered = false;
+                apply_live_relay_states();
+            }
 
-        auto err = deserializeJson(incoming_data, jsonLine);
-        // Serial.print("Received: ");
-        // serializeJsonPretty(incoming_data, Serial);
+            if ((millis() - lastCoilUpdateTime) > WATCHDOG_TIMEOUT_MS) {
+                apply_watchdog_relay_states();
+            }
 
-        if (!err) {
-            lastPacketTime = millis();
-            watchdogTriggered = false;
-            run_connected_control_iteration();
-        } else {
-            Serial.print("Error Processing Incoming Data: ");
-            Serial.println(err.c_str());
-        }
-
-        /// SEND OUTGOING DATA ///
-        outgoing_data["heartbeat"] = millis(); //bake in heartbeat
-        String buffer;
-        serializeJson(outgoing_data, buffer);
-        buffer += "\n";
-        currentClient.print(buffer);
-
-        // Serial.print("Outoging: ");
-        // serializeJsonPretty(outgoing_data, Serial);
-    }
-
-    // -------- WATCHDOG CHECK -------- //
-    if (watchdogTimeoutMs > 0) {
-        if (millis() - lastPacketTime > watchdogTimeoutMs) {
-            if (!watchdogTriggered) {
-                Serial.println("WATCHDOG TIMEOUT");
-                run_watchdog_control_iteration();
-                watchdogTriggered = true;
+            if ((millis() - lastInputRegisterUpdateTime) >= INPUT_REGISTER_UPDATE_INTERVAL_MS) {
+                update_input_registers();
+                lastInputRegisterUpdateTime = millis();
             }
         }
-    }
 
-    // Client disconnect handling
-    if (currentClient && !currentClient.connected()) {
-        Serial.println("Client disconnected");
-        currentClient.stop();
-        currentClient = EthernetClient();  // reset to a fresh object
+        Serial.println("Modbus client disconnected");
+    } else {
+        if ((millis() - lastCoilUpdateTime) > WATCHDOG_TIMEOUT_MS) {
+            apply_watchdog_relay_states();
+        }
+
+        if ((millis() - lastInputRegisterUpdateTime) >= INPUT_REGISTER_UPDATE_INTERVAL_MS) {
+            update_input_registers();
+            lastInputRegisterUpdateTime = millis();
+        }
     }
 }

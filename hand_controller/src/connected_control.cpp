@@ -1,89 +1,67 @@
-//
-// Created by kemptonburton on 2/18/2026.
-//
-
 #include "main.h"
 
-/* ---------- CONFIGURATIONS ---------- /
- * "watchdog_timeout_seconds"
- * "relay_#_watchdog_state"
- */
+namespace {
+uint16_t read_voltage_millivolts(Adafruit_ADS1115& ads, int channel) {
+    int16_t raw = ads.readADC_SingleEnded(channel);
+    float volts = raw * 0.0001875f;
 
-/* ---------- COMMANDS ---------- /
- * "relay_#_desired_state"
- */
-
-/* ---------- TELEMETRY ---------- /
- * "relay_#_actual_state"
- * "AIN#_raw"
- */
-
-/* ---------- VALID CONNECTION ---------- /
- * When the telemetry connection is VALID, this runs.
- * Data comes from incomingData. Cleared on each iteration (NOT Persistent).
- * Outgoing data is written to outgoingData.
- *
- * COMMANDS
- * Gets commands from incomingData JSON.
- * Runs the commands. (commanding relays)
- *
- * SETTINGS / CONFIGURATION
- * Some commands are also persestent configuration variables
- * These are written to any persistent data store (watchdog states)
- *
- * TELEMETRY
- * Telemetry is gathered (analog channels)
- * Writes telemetry & state to outgoingData JSON.
- *
- */
-void run_connected_control_iteration() {
-    // =====================================================
-    // ================= SETTINGS/ CONFIGURATION ===========
-    // =====================================================
-
-    // -------- WATCHDOG TIMEOUT COMMAND -------- //
-    if (incoming_data.containsKey("watchdog_timeout_seconds")) {
-
-        int seconds = incoming_data["watchdog_timeout_seconds"];
-        watchdogTimeoutMs = (unsigned long)seconds * 1000UL;
+    if (volts < 0.0f) {
+        volts = 0.0f;
     }
 
+    return static_cast<uint16_t>(volts * 1000.0f);
+}
 
-    // =====================================================
-    // ================= COMMANDING ========================
-    // =====================================================
+uint16_t read_internal_voltage_millivolts(int pin) {
+    const int raw = analogRead(pin);
+    const float volts = (static_cast<float>(raw) * 5.0f) / 1023.0f;
+    return static_cast<uint16_t>(volts * 1000.0f);
+}
+}
 
-    // -------- COMMAND RELAYS -------- //
-    for (int i = RELAY_NUM_START; i <= RELAY_NUM_END; i++) {
+void configure_modbus() {
+    modbusTCPServer.configureCoils(RELAY_COIL_START, COIL_COUNT);
+    modbusTCPServer.configureInputRegisters(
+        VOLTAGE_INPUT_REGISTER_START,
+        INPUT_REGISTER_COUNT
+    );
 
-        int index = i - RELAY_NUM_START;
+    for (int i = 0; i < RELAY_COUNT; ++i) {
+        modbusTCPServer.coilWrite(RELAY_COIL_START + i, 0);
+        modbusTCPServer.coilWrite(WATCHDOG_COIL_START + i, relay_watchdog_states[i]);
+    }
+}
 
-        // Desired state
-        String desired_key = "relay_" + String(i) + "_desired_state";
-        if (incoming_data.containsKey(desired_key)) {
-
-            int desired = incoming_data[desired_key];
-            digitalWrite(RELAY_PINS[index], desired ? HIGH : LOW);
-
-            String actual_key = "relay_" + String(i) + "_actual_state";
-            outgoing_data[actual_key] = desired;
-        }
-
-        // Save Watchdog state to persistent data
-        String watchdog_key = "relay_" + String(i) + "_watchdog_state";
-        if (incoming_data.containsKey(watchdog_key)) {
-            relay_watchdog_states[index] = incoming_data[watchdog_key];
+void update_input_registers() {
+    for (int device = 0; device < 2; ++device) {
+        for (int channel = 0; channel < 4; ++channel) {
+            const int inputRegister = VOLTAGE_INPUT_REGISTER_START + (device * 4) + channel;
+            modbusTCPServer.inputRegisterWrite(
+                inputRegister,
+                read_voltage_millivolts(*ads_list[device], channel)
+            );
         }
     }
 
+    for (int i = 0; i < INTERNAL_ANALOG_COUNT; ++i) {
+        modbusTCPServer.inputRegisterWrite(
+            VOLTAGE_INPUT_REGISTER_START + ADS_ANALOG_COUNT + i,
+            read_internal_voltage_millivolts(INTERNAL_ANALOG_PINS[i])
+        );
+    }
 
-    // -------- ANALOG CHANNELS -------- //
-    for (int i = ANALOG_NUM_START; i <= ANALOG_NUM_END; i++) {
+    for (int i = 0; i < RELAY_COUNT; ++i) {
+        const int state = digitalRead(RELAY_PINS[i]) == HIGH ? 1 : 0;
+        modbusTCPServer.inputRegisterWrite(RELAY_STATE_INPUT_REGISTER_START + i, state);
+    }
+}
 
-        int index = i - ANALOG_NUM_START;
-        int raw = analogRead(ANALOG_PINS[index]);
+void apply_live_relay_states() {
+    for (int i = 0; i < RELAY_COUNT; ++i) {
+        const int relayState = modbusTCPServer.coilRead(RELAY_COIL_START + i) ? HIGH : LOW;
+        const int watchdogState = modbusTCPServer.coilRead(WATCHDOG_COIL_START + i) ? 1 : 0;
 
-        String outgoing_key = "AIN" + String(i) + "_raw";
-        outgoing_data[outgoing_key] = raw;
+        relay_watchdog_states[i] = watchdogState;
+        digitalWrite(RELAY_PINS[i], relayState);
     }
 }
