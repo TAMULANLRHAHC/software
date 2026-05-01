@@ -1,0 +1,20 @@
+{
+  "artifactId": "interface-desktop",
+  "displayName": "DARTWIC Desktop Interface",
+  "version": "1.0.0-pre_release",
+  "platform": "win32-x64",
+  "releaseChannel": "pre-release",
+  "stageDir": "C:\\Users\\saint\\Documents\\Code\\Github\\DARTWIC\\releases\\packaged\\desktop\\interface-desktop-1.0.0-pre_release-win64",
+  "archiveFile": "interface-desktop-1.0.0-pre_release-win64.zip",
+  "compatibility": {
+    "engineVersion": "1.0.0-pre_release",
+    "interfaceVersion": "1.0.0-pre_release"
+  },
+  "minimumVersions": {
+    "minInterfaceVersion": "1.0.0-pre_release",
+    "minEngineVersion": "1.0.0-pre_release"
+  },
+  "notesPath": "docs/Releases",
+  "docsPath": "docs/Guides/latest/Getting Started.md",
+  "generatedAt": "2026-05-01T04:23:24.181Z"
+}

@@ -1,0 +1,23 @@
+{
+    "category": "Parameter Display",
+    "name": "Channel Graph",
+    "node": {
+        "data": {
+            "series": [
+                {
+                    "channel_path": "",
+                    "label": "",
+                    "color": "#FFFFFF"
+                }
+            ],
+            "settings": {
+                "windowSeconds": 30,
+                "cullScale": 3,
+                "enableHistoricalRequests": true
+            }
+        },
+        "height": 400,
+        "type": "channel_graph",
+        "width": 700
+    }
+}

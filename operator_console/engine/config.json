@@ -1,0 +1,13 @@
+{
+    "active_project_name": "default",
+    "deployment_id": "development",
+    "license_path": "license.json",
+    "node_name": "OPERATOR_CONSOLE",
+    "run_rapid_recording_startup_benchmark": false,
+    "run_rapid_startup_benchmark": false,
+    "runtime_persist_interval_seconds": 60,
+    "server_admin_password": "admin",
+    "server_ip": "127.0.0.1",
+    "server_port": 7000,
+    "workspace_root_directory": "../workspace"
+}

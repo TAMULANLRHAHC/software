@@ -1,0 +1,76 @@
+task hand/control_automation
+
+-- channels used
+|control/pointer_finger_extend.value| = 0
+|control/pointer_finger_extend_state.value| = 0
+|control/hand_fingers_extend.value| = 0
+|control/hand_fingers_extend_state.value| = 0
+|control/thumb_extend.value| = 0
+|control/thumb_extend_state.value| = 0
+|control/thumb_opposition.value| = 0
+|control/thumb_opposition_state.value| = 0
+
+start:
+    -- No startup work required.
+
+task elapsed_seconds:
+    if |hand/info.connected.value| == 0:
+        return
+
+    if |control/pointer_finger_extend.value| == 1:
+        |hand/relay_1.value| = 1
+        |hand/relay_2.value| = 0
+    else:
+        |hand/relay_1.value| = 0
+        |hand/relay_2.value| = 1
+
+    if |hand/relay_1_state.value| == 1 and |hand/relay_2_state.value| == 0:
+        |control/pointer_finger_extend_state.value| = 1
+    else:
+        |control/pointer_finger_extend_state.value| = 0
+
+    if |control/hand_fingers_extend.value| == 1:
+        |hand/relay_3.value| = 1
+        |hand/relay_4.value| = 0
+    else:
+        |hand/relay_3.value| = 0
+        |hand/relay_4.value| = 1
+
+    if |hand/relay_3_state.value| == 1 and |hand/relay_4_state.value| == 0:
+        |control/hand_fingers_extend_state.value| = 1
+    else:
+        |control/hand_fingers_extend_state.value| = 0
+
+    if |control/thumb_extend.value| == 1:
+        |hand/relay_5.value| = 1
+        |hand/relay_6.value| = 0
+    else:
+        |hand/relay_5.value| = 0
+        |hand/relay_6.value| = 1
+
+    if |hand/relay_5_state.value| == 1 and |hand/relay_6_state.value| == 0:
+        |control/thumb_extend_state.value| = 1
+    else:
+        |control/thumb_extend_state.value| = 0
+
+    if |control/thumb_opposition.value| == 1:
+        |hand/relay_7.value| = 1
+        |hand/relay_8.value| = 0
+    else:
+        |hand/relay_7.value| = 0
+        |hand/relay_8.value| = 1
+
+    if |hand/relay_7_state.value| == 1 and |hand/relay_8_state.value| == 0:
+        |control/thumb_opposition_state.value| = 1
+    else:
+        |control/thumb_opposition_state.value| = 0
+
+end:
+    |hand/relay_1.value| = 0
+    |hand/relay_2.value| = 0
+    |hand/relay_3.value| = 0
+    |hand/relay_4.value| = 0
+    |hand/relay_5.value| = 0
+    |hand/relay_6.value| = 0
+    |hand/relay_7.value| = 0
+    |hand/relay_8.value| = 0

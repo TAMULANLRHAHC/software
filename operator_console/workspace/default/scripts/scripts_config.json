@@ -1,0 +1,5 @@
+{
+  "automations/controls.dcode": {
+    "run_on_startup": true
+  }
+}
